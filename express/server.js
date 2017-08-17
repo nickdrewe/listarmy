@@ -197,8 +197,8 @@ app.get('/:slug/delete/:editKey', (req, res) => {
         // clear cache
         var cfParams = {
           files: [
-            'http://www.publishthis.email/' + result.messageId,
-            'https://www.publishthis.email/' + result.messageId
+            'http://www.listarmy.com/' + result.messageId,
+            'https://www.listarmy.com/' + result.messageId
           ]
         }
         clearCache(cfParams)

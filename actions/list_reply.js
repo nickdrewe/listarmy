@@ -35,11 +35,11 @@ const sendListWelcomeAPI = mailObj => {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@publishthis.email>',
+    Source: '"Publish This Email" <noreply@' + config.DOMAIN + '>',
     ReplyToAddresses: [
-      '"Publish This Email" <hello@publishthis.email>'
+      '"Publish This Email" <hello@' + config.DOMAIN + '>'
     ],
-    ReturnPath: 'return@publishthis.email'
+    ReturnPath: 'return@' + config.DOMAIN
   }
 
   return SES.sendEmail(params).then(() => mailObj)
@@ -76,11 +76,11 @@ const sendNewListReply = mailObj => {
           }
         }
       },
-      Source: '"Publish This Email" <noreply@publishthis.email>',
+      Source: '"Publish This Email" <noreply@' + config.DOMAIN + '>',
       ReplyToAddresses: [
-        '"Publish This Email" <hello@publishthis.email>'
+        '"Publish This Email" <hello@' + config.DOMAIN + '>'
       ],
-      ReturnPath: 'return@publishthis.email'
+      ReturnPath: 'return@' + config.DOMAIN
     }
 
     return SES.sendEmail(params).then(() => mailObj)
@@ -113,11 +113,11 @@ const sendListReply = mailObj => {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@publishthis.email>',
+    Source: '"Publish This Email" <noreply@' + config.DOMAIN + '>',
     ReplyToAddresses: [
-      '"Publish This Email" <hello@publishthis.email>'
+      '"Publish This Email" <hello@' + config.DOMAIN + '>'
     ],
-    ReturnPath: 'return@publishthis.email'
+    ReturnPath: 'return@' + config.DOMAIN
   }
 
   return SES.sendEmail(params).then(() => mailObj)
@@ -148,11 +148,11 @@ const sendListReplyNoSubs = mailObj => {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@publishthis.email>',
+    Source: '"Publish This Email" <noreply@' + config.DOMAIN + '>',
     ReplyToAddresses: [
-      '"Publish This Email" <hello@publishthis.email>'
+      '"Publish This Email" <hello@' + config.DOMAIN + '>'
     ],
-    ReturnPath: 'return@publishthis.email'
+    ReturnPath: 'return@' + config.DOMAIN
   }
 
   return SES.sendEmail(params).then(() => mailObj)

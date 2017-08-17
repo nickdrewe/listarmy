@@ -1,10 +1,11 @@
 import SES from '/aws/ses'
 import doT from 'dot'
 import {replyEmails} from '/templates/email-reply'
+import { config } from '/config/environment'
 
 const sendListPreview = mailObj => {
 
-  mailObj.pteDomain = 'https://www.publishthis.email'
+  mailObj.pteDomain = 'https://www.' + config.DOMAIN
 
   // set reply template for the appropriate language
   var replyTemplate = doT.template(replyEmails[mailObj.language])
@@ -21,7 +22,7 @@ const sendListPreview = mailObj => {
     },
     Message: {
       Subject: {
-        Data: mailObj.subject + ' - publishthis.email',
+        Data: mailObj.subject + ' - listarmy.com',
         Charset: 'UTF-8'
       },
       Body: {
@@ -31,11 +32,11 @@ const sendListPreview = mailObj => {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@publishthis.email>',
+    Source: '"Publish This Email" <noreply@' + config.DOMAIN + '>',
     ReplyToAddresses: [
-      '"Publish This Email" <hello@publishthis.email>'
+      '"Publish This Email" <hello@' + config.DOMAIN + '>'
     ],
-    ReturnPath: 'return@publishthis.email'
+    ReturnPath: 'return@' + config.DOMAIN
   }
 
   return SES.sendEmail(params)

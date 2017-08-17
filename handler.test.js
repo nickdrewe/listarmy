@@ -8,15 +8,15 @@ aws.config.update({
 
 var handler = require('./handler.source')
 
-handler.listApiCreate({
-  queryStringParameters: {
-    oe: 'nick.drewe@gmail.com',
-    ln: 'Nick\'s Test'
-    // cn: 'blog'
-  }
-}, {}, function(err, response){
-  console.log(err, response)
-})
+// handler.listApiCreate({
+//   queryStringParameters: {
+//     oe: 'nick.drewe@gmail.com',
+//     ln: 'Nick\'s Test'
+//     // cn: 'blog'
+//   }
+// }, {}, function(err, response){
+//   console.log(err, response)
+// })
 
 // handler.listBulkSubscribe({
 //   body: JSON.stringify({
@@ -31,19 +31,19 @@ handler.listApiCreate({
 //   console.log(something, result)
 // })
 
-// handler.receive({
-//   Records: [
-//     {
-//       s3: {
-//         object: {
-//           key: 't60sp5qof2v9dlahcg7p7e7rjpvhskae46jja2o1'
-//         }
-//       }
-//     }
-//   ]
-// }, {}, function(result){
-//   console.log(result)
-// })
+handler.receive({
+  Records: [
+    {
+      s3: {
+        object: {
+          key: 'hniqpo1hfq0rcpihbjlglv7mo8hk4fsbfaagee81'
+        }
+      }
+    }
+  ]
+}, {}, function(result){
+  console.log(result)
+})
 
 // listId: B1GvXjzyDb
 

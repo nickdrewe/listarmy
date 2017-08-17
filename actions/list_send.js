@@ -28,9 +28,9 @@ const listSend = mailPackage => {
             Html: { Data: emailBody, Charset: 'UTF-8' }
           }
         },
-        Source: `"${mailPackage.list.title}" <noreply@publishthis.email>`,
+        Source: `"${mailPackage.list.title}" <noreply@${config.DOMAIN}>`,
         ReplyToAddresses: [ `"${mailPackage.list.title}" <${mailPackage.from[0].address}>` ],
-        ReturnPath: 'return@publishthis.email'
+        ReturnPath: 'return@' + config.DOMAIN
       }
       return SES.sendEmail(params)
     })

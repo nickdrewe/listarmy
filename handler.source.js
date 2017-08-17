@@ -37,7 +37,7 @@ import { config } from '/config/environment'
 // receive function for pages
 const receive = (event, context, callback) => {
   const messageId = event.Records[0].s3.object.key
-  getRawEmail(messageId, config.S3_BUCKET)
+  getRawEmail(messageId, config.S3_BUCKET_PAGE)
   .then(processEmail)
   .then(collectionsProcess)
   .then(storeInDynamo)

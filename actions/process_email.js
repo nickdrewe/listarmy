@@ -5,6 +5,7 @@ import imgur from '/imgur/imgur'
 import cheerio from 'cheerio'
 import { detectWhitelist, detectLanguage, langCode3to2 } from '/actions/localise'
 import { slugify } from '/actions/title-to-slug'
+import { config } from '/config/environment'
 
 const sanitizeOptions = {
   // allowedTags: [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol',
@@ -204,11 +205,11 @@ const filterLinks = email => {
 const buildEmailObj = rawEmail => {
   const messageId = rawEmail.messageId
 
-  var to = ['list@publishthis.email']
+  var to = ['list@' + config.DOMAIN ]
   if(rawEmail.to){
     to = rawEmail.to
   }else if(rawEmail.label){
-    to = [{ address: 'list+' + rawEmail.label + '@publishthis.email'}]
+    to = [{ address: 'list+' + rawEmail.label + '@' + config.DOMAIN}]
   }
 
   const from = rawEmail.from
@@ -229,7 +230,7 @@ const buildEmailObj = rawEmail => {
     return r.address
   })
   .join(',')
-  .match(/(staging-list|staging|page|email|list)(?:\+)([\w]+)(?:@publishthis.email)/)
+  .match(/(page|email|list)(?:\+)([\w]+)(?:@(?:dev.)?listarmy.com)/)
 
   shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~_')
 

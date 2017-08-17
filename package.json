@@ -4,6 +4,7 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
+    "dev": "babel-node ./handler.test.js",
     "express": "babel-node ./express/server.js",
     "express:debug": "babel-node --inspect --debug-brk ./express/server.js",
     "build:serverless": "webpack --colors --progress --config ./config/webpack.serverless.config.babel.js",

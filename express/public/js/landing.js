@@ -81,7 +81,7 @@ angular.module('landing', [])
           }else if(!response.data.success && response.data.label_required){
             // label required - proceed to step 2
             $scope.state.step = 2;
-            $scope.infoBox('This isn\'t your first list, so you\'ll need a label to send to it e.g. <strong>list+fishing@publishthis.email</strong>')
+            $scope.infoBox('This isn\'t your first list, so you\'ll need a label to send to it e.g. <strong>list+fishing@listarmy.com</strong>')
             focus('label');
           }
         }, function(response){
