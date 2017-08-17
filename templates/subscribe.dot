@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>[[=model.subject]] - publishthis.email</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/css/view.css">
+  <link href="https://fonts.googleapis.com/css?family=Martel:300,400|Open+Sans:300,400,600|Roboto+Slab:300,400" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  [[= partial('partials/head-canonical.dot') ]]
+</head>
+<body onscroll="scroll()">
+  <div class="page-margin page" dir="[[=model.dir]]">
+    <!-- <h1>[[=model.subject]]</h1> -->
+    <!-- subscribe -->
+    <div class="subscription">
+      <div id="loader" class="subscribe-loader-hidden">
+        <div class="loader-table">
+          <div class="loader-cell">
+            <img src="/img/puff-white.svg" />
+          </div>
+        </div>
+
+      </div>
+      <div id="subscribe">
+        <!-- circle image -->
+        <div class="form-circle-container">
+          <div class="form-circle">
+            <img src="./img/037-note-1.svg" />
+          </div>
+        </div>
+        <!-- end circle image -->
+        <div class="subscribe-heading">
+          Subscribe to [[=model.subject]]
+        </div>
+        <div class="subscribe-subheading">
+          Receive updates directly to your inbox.
+        </div>
+        <div class="subscribe-form form">
+          <input id="email" placeholder="Enter your email address" />
+          <div class="form-button" onclick="subscribe()">Subscribe</div>
+          <div id="error" class="subscribe-hidden">
+            Oops, it looks like there is a problem with your email address.
+          </div>
+        </div>
+
+      </div>
+      <div id="confirm" class="subscribe-hidden">
+        <div class="subscribe-heading">
+          Confirm your subscription!
+        </div>
+        <div class="subscribe-subheading">
+          We’ve sent an email to verify your email address. Please click the link in the email to confirm your subscription. Thank you!
+        </div>
+      </div>
+    </div>
+    <script>var listId = '[[=model.listId]]';</script>
+    <script>var API_URL = '[[=model.API_URL]]';</script>
+    <script src="/js/subscribe.js"></script>
+    <!-- end subscribe -->
+  </div>
+  [[= partial('partials/analytics.dot') ]]
+</body>
+</html>

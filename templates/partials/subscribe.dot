@@ -1,0 +1,37 @@
+<div class="subscription">
+  <div id="loader" class="subscribe-loader-hidden">
+    <div class="loader-table">
+      <div class="loader-cell">
+        <img src="/img/puff-white.svg" />
+      </div>
+    </div>
+
+  </div>
+  <div id="subscribe">
+    <div class="subscribe-heading">
+      Subscribe
+    </div>
+    <div class="subscribe-subheading">
+      Receive updates directly to your inbox.
+    </div>
+    <div class="subscribe-form form">
+      <input id="email" placeholder="Enter your email address" />
+      <div class="form-button" onclick="subscribe()">Subscribe</div>
+      <div id="error" class="subscribe-hidden">
+        Oops, it looks like there is a problem with your email address.
+      </div>
+    </div>
+
+  </div>
+  <div id="confirm" class="subscribe-hidden">
+    <div class="subscribe-heading">
+      Confirm your subscription!
+    </div>
+    <div class="subscribe-subheading">
+      We’ve sent an email to verify your email address. Please click the link in the email to confirm your subscription. Thank you!
+    </div>
+  </div>
+</div>
+<script>var listId = '[[=model.listId]]';</script>
+<script>var API_URL = '[[=model.API_URL]]';</script>
+<script src="/js/subscribe.js"></script>

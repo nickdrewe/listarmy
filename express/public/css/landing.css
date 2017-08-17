@@ -1,0 +1,150 @@
+body{
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.hero-panel{
+  background-color: #FF5468;
+  height: 100vh;
+  color: #FFF;
+  position: relative;
+  font-size: 0;
+}
+
+/*sides*/
+.side{
+  position: absolute;
+  height: 100vh;
+
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+.left-side{
+  left: 0;
+  padding: 100px;
+  box-sizing: border-box;
+}
+.right-side{
+  right: 0;
+  background-color: #20222B;
+  /*position: relative;*/
+}
+
+.hero-img{
+  width: 75px;
+  margin-bottom: 25px;
+  -ms-transform: rotate(-7deg);
+  -webkit-transform: rotate(-7deg);
+  transform: rotate(-7deg);
+}
+
+/*logo float*/
+.logo-float{
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  font-size: 40px;
+  color: #FFF;
+}
+.logo-list{
+  font-weight: 400;
+}
+.logo-army{
+  font-weight: 600;
+}
+.logo-com{
+  font-weight: 400;
+}
+.hero-heading{
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 60px;
+  margin-bottom: 8px;
+}
+.hero-subheading{
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 18px;
+}
+
+.create-input-container{
+  background-color: #FFF;
+  border-radius: 12px;
+  width: auto;
+  padding-left: 12px;
+}
+.create-label{
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+.create input{
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 8px 17px;
+  border: none;
+  border-radius: 22px;
+  width: 250px;
+  color: #20222b;
+  margin-bottom: 15px;
+}
+.create input:focus{
+  outline: none;
+}
+.create-button{
+  height: 40px;
+  vertical-align: top;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.create-loader-container{
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+}
+.create-button-loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -10px;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+/*info box*/
+.create-info{
+  background-color: #26547C;
+  font-size: 14px;
+  width: 284px;
+  padding: 7px 12px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  font-weight: 300;
+  position: relative;
+  margin-bottom: 15px;
+  box-shadow: 0px 2px 1px rgba(0,0,0,0.3);
+}
+.create-info:after{
+  bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	/*border-color: rgba(39, 42, 56, 0);*/
+	border-bottom-color: #26547C;
+	border-width: 15px;
+	margin-left: -15px;
+}
