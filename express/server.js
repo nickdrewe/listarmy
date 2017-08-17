@@ -239,16 +239,18 @@ app.get('/:slug/delete/:editKey', (req, res) => {
 })
 
 app.get('/:slug', (req, res) => {
+  console.log('Page route')
   // extract messageId from slug
   var slug = req.params.slug
+  console.log(slug)
   // complicated regex to account for URL characters upgrade
   // replaced legacy '-' with '~', new regex accounts for shortid 7-14 characters
   var messageId = slug.match(/([A-Za-z0-9-_]{9}|[A-Za-z0-9~_]{7,14})$/)[0]
-
+  console.log(messageId)
   getStoredEmail(messageId)
   .then(preRender)
   .then(mailObj => {
-
+    console.log(mailObj)
     mailObj.html = mailObj.html.replace(/<p><br \/>\n<\/p>/g, '') //attempting to tidy breaks
     // set footer language
     if(!mailObj.language){
