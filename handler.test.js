@@ -1,9 +1,9 @@
 var aws = require('aws-sdk')
 
 aws.config.update({
-  accessKeyId: process.env.PTE_AWS_ID,
-  secretAccessKey: process.env.PTE_AWS_KEY,
-  region: process.env.PTE_AWS_REGION || 'us-east-1'
+  accessKeyId: process.env.LA_AWS_ID,
+  secretAccessKey: process.env.LA_AWS_KEY,
+  region: process.env.LA_AWS_REGION || 'us-east-1'
 })
 
 var handler = require('./handler.source')

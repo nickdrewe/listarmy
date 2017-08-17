@@ -27,8 +27,8 @@ provider:
     PTE_CF_ZONEID: ${file(./serverless.env.yml):${opt:stage}.PTE_CF_ZONEID}
     PTE_IMGUR_ID: ${file(./serverless.env.yml):${opt:stage}.PTE_IMGUR_ID}
     PTE_IMGUR_SECRET: ${file(./serverless.env.yml):${opt:stage}.PTE_IMGUR_SECRET}
-    PTE_EMAIL_TABLE: ${file(./serverless.env.yml):${opt:stage}.PTE_EMAIL_TABLE}
-    PTE_S3_BUCKET: ${file(./serverless.env.yml):${opt:stage}.PTE_S3_BUCKET}
+    PAGE_TABLE: ${file(./serverless.env.yml):${opt:stage}.PAGE_TABLE}
+    PTE_S3_BUCKET_PAGE: ${file(./serverless.env.yml):${opt:stage}.PTE_S3_BUCKET}
     PTE_S3_BUCKET_LIST: ${file(./serverless.env.yml):${opt:stage}.PTE_S3_BUCKET_LIST}
     PTE_COLLECTION_TABLE: ${file(./serverless.env.yml):${opt:stage}.PTE_COLLECTION_TABLE}
     PTE_COLLECTION_ITEM_TABLE: ${file(./serverless.env.yml):${opt:stage}.PTE_COLLECTION_ITEM_TABLE}

@@ -2,7 +2,7 @@ import dynamo from '/aws/dynamo'
 import { config } from '/config/environment'
 
 const deleteEmailFromDynamo = deleteParams => dynamo.deleteResource({
-  TableName: config.EMAIL_TABLE,
+  TableName: config.PAGE_TABLE,
   Key: {
     messageId: deleteParams.messageId
   }

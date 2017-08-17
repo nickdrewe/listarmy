@@ -49,3 +49,6 @@ certs
 
 # serverless env vars
 serverless.env.yml
+
+# env
+.environment

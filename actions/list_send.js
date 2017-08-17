@@ -49,7 +49,7 @@ const listSend = mailPackage => {
 
 const markPostSent = mailPackage =>{
   var params = {
-    TableName: config.EMAIL_TABLE,
+    TableName: config.PAGE_TABLE,
     Key: {
       "messageId": mailPackage.messageId
     },

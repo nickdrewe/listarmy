@@ -82,8 +82,8 @@ var config = {
   AWS_ID: env.PTE_AWS_ID,
   AWS_KEY: env.PTE_AWS_KEY,
   AWS_REGION: env.PTE_AWS_REGION || 'us-east-1',
-  S3_BUCKET: env.PTE_S3_BUCKET,
-  EMAIL_TABLE: env.PTE_EMAIL_TABLE,
+  S3_BUCKET_PAGE: env.PTE_S3_BUCKET,
+  PAGE_TABLE: env.PTE_PAGE_TABLE,
   COLLECTION_TABLE: env.PTE_COLLECTION_TABLE,
   COLLECTION_ITEM_TABLE: env.PTE_COLLECTION_ITEM_TABLE,
   LISTS_TABLE: env.PTE_LISTS_TABLE,
@@ -611,7 +611,7 @@ var addListIdToPage = function addListIdToPage(mailObj) {
   mailObj.sendKey = _shortid2.default.generate() + _shortid2.default.generate();
 
   var params = {
-    TableName: _environment.config.EMAIL_TABLE,
+    TableName: _environment.config.PAGE_TABLE,
     Key: {
       "messageId": mailObj.messageId
     },
@@ -774,7 +774,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var deleteEmailFromDynamo = function deleteEmailFromDynamo(deleteParams) {
   return _dynamo2.default.deleteResource({
-    TableName: _environment.config.EMAIL_TABLE,
+    TableName: _environment.config.PAGE_TABLE,
     Key: {
       messageId: deleteParams.messageId
     }
@@ -971,7 +971,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var getStoredEmail = function getStoredEmail(id) {
   return _dynamo2.default.getResource({
-    TableName: _environment.config.EMAIL_TABLE,
+    TableName: _environment.config.PAGE_TABLE,
     Key: { messageId: id }
   });
 };
@@ -1392,7 +1392,7 @@ var listSend = function listSend(mailPackage) {
 
 var markPostSent = function markPostSent(mailPackage) {
   var params = {
-    TableName: _environment.config.EMAIL_TABLE,
+    TableName: _environment.config.PAGE_TABLE,
     Key: {
       "messageId": mailPackage.messageId
     },
@@ -2080,7 +2080,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var storeInDynamo = function storeInDynamo(emailObj) {
   return _dynamo2.default.putResource({
-    TableName: _environment.config.EMAIL_TABLE,
+    TableName: _environment.config.PAGE_TABLE,
     Item: emailObj,
     ConditionExpression: 'attribute_not_exists(messageId)'
   }).then(function () {
