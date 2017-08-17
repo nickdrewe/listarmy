@@ -1,5 +1,5 @@
 {
-  "name": "publishthis.email",
+  "name": "listarmy",
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
@@ -12,11 +12,6 @@
     "deploy:production": "npm run build:serverless && npm run final:deploy:production",
     "final:deploy:production": "cd serverless && sls deploy --stage production",
     "logs": "cd serverless && sls logs --stage dev -f receive --startTime 2h",
-    "logs:subscribe": "cd serverless && sls logs --stage dev -f list-subscribe --startTime 2h",
-    "logs:list:receive": "cd serverless && sls logs --stage dev -f list-receive --startTime 2h",
-    "logs:unsubscribe": "cd serverless && sls logs --stage dev -f list-unsubscribe --startTime 2h",
-    "logs:verify": "cd serverless && sls logs --stage dev -f verify-subscriber --startTime 2h",
-    "logs:production": "cd serverless && sls logs --stage production -f receive --startTime 12h",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

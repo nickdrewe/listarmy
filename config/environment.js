@@ -17,7 +17,9 @@ const config = {
   IMGUR_SECRET: env.LA_IMGUR_SECRET,
   API_URL: env.LA_API_URL,
   S3_BUCKET_LIST: env.LA_S3_BUCKET_LIST,
+  DOMAIN: env.LA_DOMAIN,
   PORT: env.PORT || 3000
+
 }
 
 export {

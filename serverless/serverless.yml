@@ -21,19 +21,20 @@ provider:
   name: aws
   runtime: nodejs4.3
   environment:
-    PTE_AWS_REGION: ${file(./serverless.env.yml):${opt:stage}.PTE_AWS_REGION}
-    PTE_CF_KEY: ${file(./serverless.env.yml):${opt:stage}.PTE_CF_KEY}
-    PTE_CF_EMAIL: ${file(./serverless.env.yml):${opt:stage}.PTE_CF_EMAIL}
-    PTE_CF_ZONEID: ${file(./serverless.env.yml):${opt:stage}.PTE_CF_ZONEID}
-    PTE_IMGUR_ID: ${file(./serverless.env.yml):${opt:stage}.PTE_IMGUR_ID}
-    PTE_IMGUR_SECRET: ${file(./serverless.env.yml):${opt:stage}.PTE_IMGUR_SECRET}
-    PAGE_TABLE: ${file(./serverless.env.yml):${opt:stage}.PAGE_TABLE}
-    PTE_S3_BUCKET_PAGE: ${file(./serverless.env.yml):${opt:stage}.PTE_S3_BUCKET}
-    PTE_S3_BUCKET_LIST: ${file(./serverless.env.yml):${opt:stage}.PTE_S3_BUCKET_LIST}
-    PTE_COLLECTION_TABLE: ${file(./serverless.env.yml):${opt:stage}.PTE_COLLECTION_TABLE}
-    PTE_COLLECTION_ITEM_TABLE: ${file(./serverless.env.yml):${opt:stage}.PTE_COLLECTION_ITEM_TABLE}
-    PTE_LISTS_TABLE: ${file(./serverless.env.yml):${opt:stage}.PTE_LISTS_TABLE}
-    PTE_LIST_SUBSCRIBERS_TABLE: ${file(./serverless.env.yml):${opt:stage}.PTE_LIST_SUBSCRIBERS_TABLE}
+    LA_DOMAIN: ${file(./serverless.env.yml):${opt:stage}.LA_DOMAIN}
+    LA_AWS_REGION: ${file(./serverless.env.yml):${opt:stage}.LA_AWS_REGION}
+    LA_CF_KEY: ${file(./serverless.env.yml):${opt:stage}.LA_CF_KEY}
+    LA_CF_EMAIL: ${file(./serverless.env.yml):${opt:stage}.LA_CF_EMAIL}
+    LA_CF_ZONEID: ${file(./serverless.env.yml):${opt:stage}.LA_CF_ZONEID}
+    LA_IMGUR_ID: ${file(./serverless.env.yml):${opt:stage}.LA_IMGUR_ID}
+    LA_IMGUR_SECRET: ${file(./serverless.env.yml):${opt:stage}.LA_IMGUR_SECRET}
+    LA_PAGE_TABLE: ${file(./serverless.env.yml):${opt:stage}.LA_PAGE_TABLE}
+    LA_S3_BUCKET_PAGE: ${file(./serverless.env.yml):${opt:stage}.LA_S3_BUCKET_PAGE}
+    LA_S3_BUCKET_LIST: ${file(./serverless.env.yml):${opt:stage}.LA_S3_BUCKET_LIST}
+    LA_COLLECTION_TABLE: ${file(./serverless.env.yml):${opt:stage}.LA_COLLECTION_TABLE}
+    LA_COLLECTION_ITEM_TABLE: ${file(./serverless.env.yml):${opt:stage}.LA_COLLECTION_ITEM_TABLE}
+    LA_LISTS_TABLE: ${file(./serverless.env.yml):${opt:stage}.LA_LISTS_TABLE}
+    LA_LIST_SUBSCRIBERS_TABLE: ${file(./serverless.env.yml):${opt:stage}.LA_LIST_SUBSCRIBERS_TABLE}
   memorySize: 256
   timeout: 20
   profile: listarmy
