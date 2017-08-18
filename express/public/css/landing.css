@@ -31,14 +31,6 @@ body{
   /*position: relative;*/
 }
 
-.hero-img{
-  width: 75px;
-  margin-bottom: 25px;
-  -ms-transform: rotate(-7deg);
-  -webkit-transform: rotate(-7deg);
-  transform: rotate(-7deg);
-}
-
 /*logo float*/
 .logo-float{
   position: absolute;
@@ -56,6 +48,15 @@ body{
 .logo-com{
   font-weight: 400;
 }
+
+/*hero*/
+.hero-img{
+  width: 75px;
+  margin-bottom: 25px;
+  -ms-transform: rotate(-7deg);
+  -webkit-transform: rotate(-7deg);
+  transform: rotate(-7deg);
+}
 .hero-heading{
   font-size: 50px;
   font-weight: 600;
@@ -65,9 +66,23 @@ body{
 .hero-subheading{
   font-size: 24px;
   font-weight: 300;
-  margin-bottom: 18px;
+  margin-bottom: 25px;
 }
-
+/*form*/
+.create-start-button{
+  font-size: 20px;
+  color: #FFF;
+  padding: 8px 28px;
+  border: 2px solid #FFF;
+  display: inline-block;
+  border-radius: 23px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.create-start-button:hover{
+  background-color: #FFF;
+  color: #FF5468;
+}
 .create-input-container{
   background-color: #FFF;
   border-radius: 12px;

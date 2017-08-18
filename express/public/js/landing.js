@@ -1,7 +1,7 @@
 angular.module('landing', [])
 .controller('formCtrl', ['$scope', '$sce', 'API', 'validate', 'focus', function($scope, $sce, API, validate, focus){
   $scope.state = {
-    step: 0,
+    step: -1,
     loading: false,
     listName: '',
     ownerEmail: '',
@@ -106,6 +106,11 @@ angular.module('landing', [])
         // user hasn't entered a name
         $scope.infoBox('Enter a name for your list. Make it short, but descriptive.')
       }
+    }
+
+    // step: -1 - Button
+    if($scope.state.step == -1){
+      $scope.state.step++;
     }
   }
 

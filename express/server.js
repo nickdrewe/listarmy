@@ -38,36 +38,37 @@ app.set('view engine', 'dot')
 app.use(express.static(path.resolve(__dirname, 'public')))
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
-app.get('/landing', function (req, res) {
+app.get('/', function (req, res) {
   var context = { API_URL: config.API_URL }
   res.render('landing', context)
 })
 
-app.get('/', function (req, res) {
-  var lang = useLanguage(req) // get browser language
-  if(lang == 'en'){
-    res.render('en' + '/index')
-  }else{
-    res.redirect(301, '/' + lang + '/') // redirect to other languages
-  }
-})
+// old PTE home page
+// app.get('/', function (req, res) {
+//   var lang = useLanguage(req) // get browser language
+//   if(lang == 'en'){
+//     res.render('en' + '/index')
+//   }else{
+//     res.redirect(301, '/' + lang + '/') // redirect to other languages
+//   }
+// })
 
-app.get('/en/', function (req, res) { res.render('en' + '/index') })
-app.get('/es/', function (req, res) { res.render('es' + '/index') })
-app.get('/ru/', function (req, res) { res.render('ru' + '/index') })
-app.get('/zh/', function (req, res) { res.render('zh' + '/index') })
-app.get('/zh-sg/', function (req, res) { res.render('zh-t' + '/index') })
-app.get('/zh-hk/', function (req, res) { res.render('zh-t' + '/index') })
-app.get('/zh-tw/', function (req, res) { res.render('zh-t' + '/index') })
-app.get('/ar/', function (req, res) { res.render('ar' + '/index') })
+// app.get('/en/', function (req, res) { res.render('en' + '/index') })
+// app.get('/es/', function (req, res) { res.render('es' + '/index') })
+// app.get('/ru/', function (req, res) { res.render('ru' + '/index') })
+// app.get('/zh/', function (req, res) { res.render('zh' + '/index') })
+// app.get('/zh-sg/', function (req, res) { res.render('zh-t' + '/index') })
+// app.get('/zh-hk/', function (req, res) { res.render('zh-t' + '/index') })
+// app.get('/zh-tw/', function (req, res) { res.render('zh-t' + '/index') })
+// app.get('/ar/', function (req, res) { res.render('ar' + '/index') })
 
-app.get('/name-your-list', function (req, res) {
-  res.render('name-your-list')
-})
+// app.get('/name-your-list', function (req, res) {
+//   res.render('name-your-list')
+// })
 
-app.get('/page-sent', function (req, res) {
-  res.render('page-sent')
-})
+// app.get('/page-sent', function (req, res) {
+//   res.render('page-sent')
+// })
 
 // bulk importer
 // Unsubscribe endpoint

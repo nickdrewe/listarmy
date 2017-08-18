@@ -29,6 +29,10 @@
         Create a list and start collecting subscribers in seconds.
       </div>
       <div class="create">
+        <div ng-show="state.step == -1">
+          <div class="create-start-button" ng-click="next()">Start an email list in 10 seconds</div>
+        </div>
+
         <!-- name -->
         <div ng-show="state.step == 0">
           <div class="create-label">
