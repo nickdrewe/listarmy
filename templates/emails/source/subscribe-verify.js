@@ -184,7 +184,7 @@ var tplSubscribeVerify = `<!DOCTYPE html>
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto;">
                   <tr>
                     <td style="border-radius: 3px; background: #FF5468; text-align: center;" class="button-td">
-                      <a href="https://www.publishthis.email/verify?sid={{=it.subscriberId}}" style="background: #FF5468; border: 15px solid #FF5468; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a">
+                      <a href="https://www.listarmy.com/verify?sid={{=it.subscriberId}}" style="background: #FF5468; border: 15px solid #FF5468; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a">
                         <span style="color:#ffffff;" class="button-link">&nbsp;&nbsp;&nbsp;&nbsp;Confirm my email address&nbsp;&nbsp;&nbsp;&nbsp;</span>
                       </a>
                     </td>
@@ -196,7 +196,7 @@ var tplSubscribeVerify = `<!DOCTYPE html>
             <tr>
               <td style="padding: 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
                 <p>Thanks</p>
-                <p><a href="https://www.publishthis.email"><img src="http://i.imgur.com/QoCKNTi.png" width="262px"/></a></p>
+                <p><a href="https://www.listarmy.com"><img src="http://i.imgur.com/QoCKNTi.png" width="262px"/></a></p>
               </td>
             </tr>
           </table>

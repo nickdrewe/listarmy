@@ -2,20 +2,20 @@
 <html>
 <head>
 
-  <title>publishthis.email - Create a Web Page in Seconds</title>
+  <title>Listarmy.com</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="stylesheet" type="text/css" href="/css/landing.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="GMQm9kj6leA_LTzBdFmSyQxCDLNC_yNQERZNhEL7Sjo" />
-  <meta property="og:url" content="https://www.publishthis.email" />
+  <meta property="og:url" content="https://www.listarmy.com" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="publishthis.email - Create a web page in seconds, by sending an email." />
-  <meta property="og:description" content="The quickest way to create a web page. No account or sign up needed. Send us an email with your content to publish online, and we'll reply instantly with a link to your new web page." />
-  <meta property="og:image" content="https://www.publishthis.email/fb-og.png" />
+  <meta property="og:title" content="listarmy.com" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="https://www.listarmy.com/fb-og.png" />
 
-  <link rel="canonical" href="https://www.publishthis.email/landing" />
+  <link rel="canonical" href="https://www.listarmy.com/" />
 
 </head>
 <body ng-app="landing">

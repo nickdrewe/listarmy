@@ -180,14 +180,14 @@ var tplPageReply = `<!DOCTYPE html>
                   <p><a href="https://publishth.is/{{=it.messageId}}">https://publishth.is/{{=it.messageId}}</a></p>
                   <!-- {{? it.slug}}<p><a href="{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}">{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}</a></p>{{?}} -->
                   <p>For a brief moment you were the creator of the newest page on the internet. Congratulations.</p>
-                  <p>Sadly, that moment has passed. But you can be the creator of the newest page on the internet at any time. Simply send another email to <a href="mailto:page@publishthis.email">page@publishthis.email</a> to publish a page - we’ll reply with a link to your new page in seconds.</p>
+                  <p>Sadly, that moment has passed. But you can be the creator of the newest page on the internet at any time. Simply send another email to <a href="mailto:page@listarmy.com">page@listarmy.com</a> to publish a page - we’ll reply with a link to your new page in seconds.</p>
 
                   <p>Delete your page: <a href="{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}">{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}</a></p>
                   {{? it.collectionId}}
-                  <p>This page is part of your <strong>{{=it.label}}</strong> collection. Any pages you send to <strong>page+{{=it.label}}@publishthis.email</strong> will be added to this collection page: <a href="{{=it.pteDomain}}/c/{{=it.collectionId}}">{{=it.pteDomain}}/c/{{=it.collectionId}}</a></p>
+                  <p>This page is part of your <strong>{{=it.label}}</strong> collection. Any pages you send to <strong>page+{{=it.label}}@listarmy.com</strong> will be added to this collection page: <a href="{{=it.pteDomain}}/c/{{=it.collectionId}}">{{=it.pteDomain}}/c/{{=it.collectionId}}</a></p>
                   {{?}}
                   <p>Thanks,</p>
-                  <a href="https://www.publishthis.email"><img src="http://i.imgur.com/QoCKNTi.png" width="262px"/></a>
+                  <a href="https://www.listarmy.com"><img src="http://i.imgur.com/QoCKNTi.png" width="262px"/></a>
 								</td>
 							</tr>
 							<!-- <tr>

@@ -208,11 +208,11 @@ var tplDelivery = `<!DOCTYPE html>
 			<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px;">
 				<tr>
 					<td style="padding: 20px 10px;width: 100%;font-size: 12px; font-family: sans-serif; line-height:18px; text-align: center; color: #888888;" class="x-gmail-data-detectors">
-						<webversion style="color:#cccccc; text-decoration:underline; font-weight: bold;"><a href="http://www.publishthis.email/{{=it.messageId}}">View as a Web Page</a></webversion>
+						<webversion style="color:#cccccc; text-decoration:underline; font-weight: bold;"><a href="http://www.listarmy.com/{{=it.messageId}}">View as a Web Page</a></webversion>
 						<br>
 						Publish This Email Pty Ltd<br>Unit 6, 63 Elizabeth St, Richmond, VIC 3121, Australia
 						<br>
-						<unsubscribe style="color:#888888; text-decoration:underline;"><a href="https://www.publishthis.email/unsubscribe?sid={{=it.subscriber.subscriberId}}">Unsubscribe</a></unsubscribe>
+						<unsubscribe style="color:#888888; text-decoration:underline;"><a href="https://www.listarmy.com/unsubscribe?sid={{=it.subscriber.subscriberId}}">Unsubscribe</a></unsubscribe>
 					</td>
 				</tr>
 			</table>

@@ -138,7 +138,7 @@ var tplListNew = `<!DOCTYPE html>
 
 		<!-- Visually Hidden Preheader Text : BEGIN -->
 		<div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;">
-			You've just created a new email list using Publishthis.email.
+			You've just created a new email list using Listarmy.
 		</div>
 		<!-- Visually Hidden Preheader Text : END -->
 
@@ -176,11 +176,11 @@ var tplListNew = `<!DOCTYPE html>
 									<h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 24px; line-height: 27px; color: #333333; font-weight: normal;">Your new email list!</h1>
                   <p>Congratulations on starting your new email list: <strong>{{=it.subject}}</strong></p>
                   <p>Share this page to start growing your subscribers:</p>
-                  <p><a href="https://www.publishthis.email/{{=it.messageId}}">https://www.publishthis.email/{{=it.messageId}}</a></p>
+                  <p><a href="https://www.listarmy.com/{{=it.messageId}}">https://www.listarmy.com/{{=it.messageId}}</a></p>
                   <h2 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 21px; color: #333333; font-weight: bold;">How to send to your email list</h2>
-                  <p>Simply email <a href="mailto:list{{?it.label}}+{{=it.label}}{{?}}@publishthis.email">list{{?it.label}}+{{=it.label}}{{?}}@publishthis.email</a> and we will automatically send it to your subscribers.</a>
+                  <p>Simply email <a href="mailto:list{{?it.label}}+{{=it.label}}{{?}}@listarmy.com">list{{?it.label}}+{{=it.label}}{{?}}@listarmy.com</a> and we will automatically send it to your subscribers.</a>
                   <p>Thanks,</p>
-                  <a href="https://www.publishthis.email"><img src="http://i.imgur.com/QoCKNTi.png" width="262px"/></a>
+                  <a href="https://www.listarmy.com"><img src="http://i.imgur.com/QoCKNTi.png" width="262px"/></a>
 								</td>
 							</tr>
 							<!-- <tr>

@@ -174,10 +174,10 @@ var tplListSendNoSubs = `<!DOCTYPE html>
 							<tr>
 								<td style="padding: 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
 									<h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 24px; line-height: 27px; color: #333333; font-weight: normal;">Well this is embarassing...</h1>
-                  <p>We're sorry to tell you, but delivery of your email <a href="https://www.publishthis.email/{{=it.messageId}}">{{=it.subject}}</a> failed because you don't have any subscribers yet.</p>
+                  <p>We're sorry to tell you, but delivery of your email <a href="https://www.listarmy.com/{{=it.messageId}}">{{=it.subject}}</a> failed because you don't have any subscribers yet.</p>
                   <p>Try sharing the link to your audience to grow your subscribers</p>
                   <p>Thanks,</p>
-                  <a href="https://www.publishthis.email"><img src="http://i.imgur.com/QoCKNTi.png" width="262px"/></a>
+                  <a href="https://www.listarmy.com"><img src="http://i.imgur.com/QoCKNTi.png" width="262px"/></a>
 								</td>
 							</tr>
 							<!-- <tr>
