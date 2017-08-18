@@ -18,9 +18,9 @@
   <link rel="canonical" href="https://www.listarmy.com/" />
 
 </head>
-<body ng-app="landing">
+<body ng-app="landing" ng-controller="formCtrl">
   <div class="hero-panel">
-    <div class="side left-side" ng-controller="formCtrl">
+    <div class="side left-side" >
       <img class="hero-img" src="./img/marketing.svg" />
       <div class="hero-heading">
         Damn simple email lists.
@@ -78,6 +78,19 @@
     <div class="side right-side">
       <div class="logo-float">
         <span class="logo-list">list</span><span class="logo-army">army</span><span class="logo-com">.com</span>
+      </div>
+      <div class="empty-table">
+        <div class="empty-cell">
+          <img class="empty-img" src="./img/mail.svg" />
+        </div>
+      </div>
+      <div class="confirm" ng-show="state.step == 3">
+        <div class="confirm-heading">Done.</div>
+        <div class="confirm-subheading">Your email list is ready to start collecting subscribers! Here's what to do next.</div>
+        <ol>
+          <li>Share your <a href="#">subscription page</a> to start collecting subscribers.</li>
+          <li>Start emailing your subscribers. Email <a href="mailto:list@listarmy.com">list@listarmy.com</a>, we'll handle the rest.</li>
+        </ol>
       </div>
     </div>
   </div>

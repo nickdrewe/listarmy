@@ -3,6 +3,10 @@ body{
   font-family: 'Open Sans', sans-serif;
 }
 
+a{
+  color: inherit;
+}
+
 .hero-panel{
   background-color: #FF5468;
   height: 100vh;
@@ -28,6 +32,8 @@ body{
 .right-side{
   right: 0;
   background-color: #20222B;
+  padding: 100px;
+  box-sizing: border-box;
   /*position: relative;*/
 }
 
@@ -135,6 +141,41 @@ body{
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+/*confirmation*/
+.confirm{
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 300;
+}
+.confirm-heading{
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.confirm-subheading{
+
+}
+.confirm li{
+  margin-bottom: 8px;
+}
+
+/*empty right side*/
+.empty-table{
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.empty-cell{
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+.empty-img{
+  width: 150px;
+  /*opacity: 0.1;*/
+}
 
 /*info box*/
 .create-info{
