@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 38);
+/******/ 	return __webpack_require__(__webpack_require__.s = 39);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -79,23 +79,25 @@ Object.defineProperty(exports, "__esModule", {
 var env = process.env;
 
 var config = {
-  AWS_ID: env.PTE_AWS_ID,
-  AWS_KEY: env.PTE_AWS_KEY,
-  AWS_REGION: env.PTE_AWS_REGION || 'us-east-1',
-  S3_BUCKET_PAGE: env.PTE_S3_BUCKET,
-  PAGE_TABLE: env.PTE_PAGE_TABLE,
-  COLLECTION_TABLE: env.PTE_COLLECTION_TABLE,
-  COLLECTION_ITEM_TABLE: env.PTE_COLLECTION_ITEM_TABLE,
-  LISTS_TABLE: env.PTE_LISTS_TABLE,
-  LIST_SUBSCRIBERS_TABLE: env.PTE_LIST_SUBSCRIBERS_TABLE,
-  CF_KEY: env.PTE_CF_KEY,
-  CF_EMAIL: env.PTE_CF_EMAIL,
-  CF_ZONEID: env.PTE_CF_ZONEID,
-  IMGUR_ID: env.PTE_IMGUR_ID,
-  IMGUR_SECRET: env.PTE_IMGUR_SECRET,
-  API_URL: env.PTE_API_URL,
-  S3_BUCKET_LIST: env.PTE_S3_BUCKET_LIST,
+  AWS_ID: env.LA_AWS_ID,
+  AWS_KEY: env.LA_AWS_KEY,
+  AWS_REGION: env.LA_AWS_REGION || 'us-east-1',
+  S3_BUCKET_PAGE: env.LA_S3_BUCKET_PAGE,
+  PAGE_TABLE: env.LA_PAGE_TABLE,
+  COLLECTION_TABLE: env.LA_COLLECTION_TABLE,
+  COLLECTION_ITEM_TABLE: env.LA_COLLECTION_ITEM_TABLE,
+  LISTS_TABLE: env.LA_LISTS_TABLE,
+  LIST_SUBSCRIBERS_TABLE: env.LA_LIST_SUBSCRIBERS_TABLE,
+  CF_KEY: env.LA_CF_KEY,
+  CF_EMAIL: env.LA_CF_EMAIL,
+  CF_ZONEID: env.LA_CF_ZONEID,
+  IMGUR_ID: env.LA_IMGUR_ID,
+  IMGUR_SECRET: env.LA_IMGUR_SECRET,
+  API_URL: env.LA_API_URL,
+  S3_BUCKET_LIST: env.LA_S3_BUCKET_LIST,
+  DOMAIN: env.LA_DOMAIN,
   PORT: env.PORT || 3000
+
 };
 
 exports.config = config;
@@ -232,7 +234,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.updateConfig = undefined;
 
-var _awsSdk = __webpack_require__(47);
+var _awsSdk = __webpack_require__(49);
 
 var _awsSdk2 = _interopRequireDefault(_awsSdk);
 
@@ -261,21 +263,23 @@ exports.updateConfig = updateConfig;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.tplListSubscriberNew = exports.tplSubscribeVerify = exports.tplDelivery = exports.tplListSendNoSubs = exports.tplListSendComplete = exports.tplListNew = exports.tplPageReply = undefined;
+exports.tplListNewAPI = exports.tplListSubscriberNew = exports.tplSubscribeVerify = exports.tplDelivery = exports.tplListSendNoSubs = exports.tplListSendComplete = exports.tplListNew = exports.tplPageReply = undefined;
 
-var _pageReply = __webpack_require__(45);
+var _pageReply = __webpack_require__(47);
 
-var _listNew = __webpack_require__(41);
+var _listNew = __webpack_require__(43);
 
-var _listSendComplete = __webpack_require__(42);
+var _listNewAPI = __webpack_require__(42);
 
-var _listSendNoSubs = __webpack_require__(43);
+var _listSendComplete = __webpack_require__(44);
 
-var _delivery = __webpack_require__(40);
+var _listSendNoSubs = __webpack_require__(45);
 
-var _subscribeVerify = __webpack_require__(46);
+var _delivery = __webpack_require__(41);
 
-var _listSubscriberNew = __webpack_require__(44);
+var _subscribeVerify = __webpack_require__(48);
+
+var _listSubscriberNew = __webpack_require__(46);
 
 // var tplPageReply = fs.readFileSync('/templates/emails/source/page-reply.html', 'utf8');
 // var tplListNew = fs.readFileSync('/templates/emails/source/list-new.html', 'utf8');
@@ -284,13 +288,15 @@ var _listSubscriberNew = __webpack_require__(44);
 // var tplDelivery = fs.readFileSync('/templates/emails/source/delivery.html', 'utf8');
 // var tplSubscribeVerify = fs.readFileSync('/templates/emails/source/subscribe-verify.html', 'utf8');
 
+// import * as fs from 'fs'
 exports.tplPageReply = _pageReply.tplPageReply;
 exports.tplListNew = _listNew.tplListNew;
 exports.tplListSendComplete = _listSendComplete.tplListSendComplete;
 exports.tplListSendNoSubs = _listSendNoSubs.tplListSendNoSubs;
 exports.tplDelivery = _delivery.tplDelivery;
 exports.tplSubscribeVerify = _subscribeVerify.tplSubscribeVerify;
-exports.tplListSubscriberNew = _listSubscriberNew.tplListSubscriberNew; // import * as fs from 'fs'
+exports.tplListSubscriberNew = _listSubscriberNew.tplListSubscriberNew;
+exports.tplListNewAPI = _listNewAPI.tplListNewAPI;
 
 /***/ }),
 /* 7 */
@@ -310,11 +316,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.langCode3to2 = exports.detectLanguage = exports.detectWhitelist = exports.acceptLanguages = exports.useLanguage = undefined;
 
-var _francMin = __webpack_require__(50);
+var _francMin = __webpack_require__(52);
 
 var _francMin2 = _interopRequireDefault(_francMin);
 
-var _traditionalOrSimplified = __webpack_require__(53);
+var _traditionalOrSimplified = __webpack_require__(55);
 
 var _traditionalOrSimplified2 = _interopRequireDefault(_traditionalOrSimplified);
 
@@ -447,7 +453,7 @@ Object.defineProperty(exports, "__esModule", {
 var replyEmails = {
   'ar': '<div dir="rtl">\n<p>\u0645\u0631\u062D\u0628\u0627,</p>\n<p>\u0644\u0642\u062F \u062A\u0644\u0642\u064A\u0646\u0627 \u0628\u0631\u064A\u062F\u0643 \u0627\u0644\u0625\u0644\u0643\u062A\u0631\u0648\u0646\u064A <strong>{{=it.subject}}</strong>,  , \u062B\u0645 \u0642\u0645\u0646\u0627 \u0628\u062A\u062D\u0648\u064A\u0644\u0647 \u0627\u0644\u064A \u0635\u0641\u062D\u0629 \u0648\u064A\u0628 \u0648\u0646\u0634\u0631\u0646\u0627\u0647 \u0639\u0644\u064A \u0627\u0644\u0625\u0646\u062A\u0631\u0646\u062A \u0647\u0646\u0627:</p>\n<p><a href="https://publishth.is/{{=it.messageId}}">https://publishth.is/{{=it.messageId}}</a></p>\n{{? it.slug}}<p><a href="{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}">{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}</a></p>{{?}}\n<p><strong>\u0634\u0643\u0631\u0627 \u0644\u0643\u060C<a href="https://www.publishthis.email">publishthis.email</a></strong></p>\n<p>\u0627\u062D\u0630\u0641 \u0635\u0641\u062D\u062A\u0643: <a href="{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}">{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}</a></p>\n{{? it.collectionId}}\n<p>\u0647\u0630\u0647 \u0627\u0644\u0635\u0641\u062D\u0629 \u062C\u0632\u0621 \u0645\u0646 \u0645\u062C\u0645\u0648\u0639\u0629: <a href="{{=it.pteDomain}}/c/{{=it.collectionId}}">{{=it.pteDomain}}/c/{{=it.collectionId}}</a></p>\n{{?}}\n</div>\n',
   'es': '<p>Hola!</p>\n<p>Hemos recibido tu email <strong>{{=it.subject}}</strong>, lo convertimos en una p\xE1gina web y la publicamos online en este enlace::</p>\n<p><a href="https://publishth.is/{{=it.messageId}}">https://publishth.is/{{=it.messageId}}</a></p>\n{{? it.slug}}<p><a href="{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}">{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}</a></p>{{?}}\n<p>Gracias de parte de <strong><a href="https://www.publishthis.email">publishthis.email</a></strong></p>\n<p>Borra tu p\xE1gina: <a href="{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}">{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}</a></p>\n{{? it.collectionId}}\n<p>Esta p\xE1gina es parte de una colecci\xF3n: <a href="{{=it.pteDomain}}/c/{{=it.collectionId}}">{{=it.pteDomain}}/c/{{=it.collectionId}}</a></p>\n{{?}}\n',
-  'en': '\n<!DOCTYPE html><html> <head> <meta name="viewport" content="width=device-width"> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>{{=it.subject}}</title> <style type="text/css"> /* ------------------------------------- RESPONSIVE AND MOBILE FRIENDLY STYLES ------------------------------------- */ @media only screen and (max-width: 620px){table[class=body] h1{font-size: 28px !important; margin-bottom: 10px !important;}table[class=body] p, table[class=body] ul, table[class=body] ol, table[class=body] td, table[class=body] span, table[class=body] a{font-size: 16px !important;}table[class=body] .wrapper, table[class=body] .article{padding: 10px !important;}table[class=body] .content{padding: 0 !important;}table[class=body] .container{padding: 0 !important; width: 100% !important;}table[class=body] .main{border-left-width: 0 !important; border-radius: 0 !important; border-right-width: 0 !important;}table[class=body] .btn table{width: 100% !important;}table[class=body] .btn a{width: 100% !important;}table[class=body] .img-responsive{height: auto !important; max-width: 100% !important; width: auto !important;}}/* ------------------------------------- PRESERVE THESE STYLES IN THE HEAD ------------------------------------- */ @media all{.ExternalClass{width: 100%;}.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div{line-height: 100%;}.apple-link a{color: inherit !important; font-family: inherit !important; font-size: inherit !important; font-weight: inherit !important; line-height: inherit !important; text-decoration: none !important;}.btn-primary table td:hover{background-color: #34495e !important;}.btn-primary a:hover{background-color: #34495e !important; border-color: #34495e !important;}}</style> </head> <body class="" style="background-color:#f6f6f6;font-family:sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.4;margin:0;padding:0;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;"> <table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;background-color:#f6f6f6;width:100%;"> <tr> <td style="font-family:sans-serif;font-size:14px;vertical-align:top;">&nbsp;</td><td class="container" style="font-family:sans-serif;font-size:14px;vertical-align:top;display:block;max-width:580px;padding:10px;width:580px;Margin:0 auto !important;"> <div class="content" style="box-sizing:border-box;display:block;Margin:0 auto;max-width:580px;padding:10px;"> <span class="preheader" style="color:transparent;display:none;height:0;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;visibility:hidden;width:0;">Success! Your page has been published.</span> <table class="main" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;background:#fff;border-radius:3px;width:100%;"> <tr> <td class="wrapper" style="font-family:sans-serif;font-size:14px;vertical-align:top;box-sizing:border-box;padding:20px;"> <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;"> <tr> <td style="font-family:sans-serif;font-size:14px;vertical-align:top;"> <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Good news!</p><p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">We\u2019ve received your email <strong>{{=it.subject}}</strong>, converted it into a tidy little web page and published it online:</p><p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;"><a href="https://publishth.is/{{=it.messageId}}" style="color:#FF5468;text-decoration:underline;">https://publishth.is/{{=it.messageId}}</a></p>{{? it.slug}}<p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;"><a href="{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}" style="color:#FF5468;text-decoration:underline;">{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}</a></p>{{?}}<p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">For a brief moment you were the creator of the newest page on the internet. Congratulations.</p><p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Sadly, that moment has passed. But you can be the creator of the newest page on the internet at any time. Simply send another email to <a href="mailto:page@publishthis.email" style="color:#FF5468;text-decoration:underline;">page@publishthis.email</a> to publish a page - we\u2019ll reply with a link to your new page in seconds.</p><p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Delete your page: <a href="{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}" style="color:#FF5468;text-decoration:underline;">{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}</a></p>{{? it.collectionId}}<p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">This page is part of your <strong>{{=it.label}}</strong> collection. Any pages you send to <strong>page+{{=it.label}}@publishthis.email</strong> will be added to this collection: <a href="{{=it.pteDomain}}/c/{{=it.collectionId}}" style="color:#FF5468;text-decoration:underline;">{{=it.pteDomain}}/c/{{=it.collectionId}}</a></p>{{?}}<p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Thanks,</p><a href="https://www.publishthis.email" style="color:#FF5468;text-decoration:underline;"><img src="http://i.imgur.com/QoCKNTi.png" width="262px" style="border:none;-ms-interpolation-mode:bicubic;max-width:100%;"/></a> </td></tr></table> </td></tr></table> <div class="footer" style="clear:both;padding-top:10px;text-align:center;width:100%;"> <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;"> <tr> <td class="content-block" style="font-family:sans-serif;font-size:14px;vertical-align:top;color:#999999;font-size:12px;text-align:center;"> <span class="apple-link" style="color:#999999;font-size:12px;text-align:center;">Publish This Email Pty Ltd, 6/63 Elizabeth St, Richmond, VIC 3121, Australia</span> <br>Don\'t like these emails? <a href="http://i.imgur.com/CScmqnj.gif" style="color:#FF5468;text-decoration:underline;color:#999999;font-size:12px;text-align:center;">Unsubscribe</a>. </td></tr><!-- <tr> <td class="content-block powered-by"> Powered by <a href="http://htmlemail.io">HTMLemail</a>. </td></tr>--> </table> </div></div></td><td style="font-family:sans-serif;font-size:14px;vertical-align:top;">&nbsp;</td></tr></table> </body></html>\n',
+  'en': '\n<!DOCTYPE html><html> <head> <meta name="viewport" content="width=device-width"> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>{{=it.subject}}</title> <style type="text/css"> /* ------------------------------------- RESPONSIVE AND MOBILE FRIENDLY STYLES ------------------------------------- */ @media only screen and (max-width: 620px){table[class=body] h1{font-size: 28px !important; margin-bottom: 10px !important;}table[class=body] p, table[class=body] ul, table[class=body] ol, table[class=body] td, table[class=body] span, table[class=body] a{font-size: 16px !important;}table[class=body] .wrapper, table[class=body] .article{padding: 10px !important;}table[class=body] .content{padding: 0 !important;}table[class=body] .container{padding: 0 !important; width: 100% !important;}table[class=body] .main{border-left-width: 0 !important; border-radius: 0 !important; border-right-width: 0 !important;}table[class=body] .btn table{width: 100% !important;}table[class=body] .btn a{width: 100% !important;}table[class=body] .img-responsive{height: auto !important; max-width: 100% !important; width: auto !important;}}/* ------------------------------------- PRESERVE THESE STYLES IN THE HEAD ------------------------------------- */ @media all{.ExternalClass{width: 100%;}.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div{line-height: 100%;}.apple-link a{color: inherit !important; font-family: inherit !important; font-size: inherit !important; font-weight: inherit !important; line-height: inherit !important; text-decoration: none !important;}.btn-primary table td:hover{background-color: #34495e !important;}.btn-primary a:hover{background-color: #34495e !important; border-color: #34495e !important;}}</style> </head> <body class="" style="background-color:#f6f6f6;font-family:sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.4;margin:0;padding:0;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;"> <table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;background-color:#f6f6f6;width:100%;"> <tr> <td style="font-family:sans-serif;font-size:14px;vertical-align:top;">&nbsp;</td><td class="container" style="font-family:sans-serif;font-size:14px;vertical-align:top;display:block;max-width:580px;padding:10px;width:580px;Margin:0 auto !important;"> <div class="content" style="box-sizing:border-box;display:block;Margin:0 auto;max-width:580px;padding:10px;"> <span class="preheader" style="color:transparent;display:none;height:0;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;visibility:hidden;width:0;">Success! Your page has been published.</span> <table class="main" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;background:#fff;border-radius:3px;width:100%;"> <tr> <td class="wrapper" style="font-family:sans-serif;font-size:14px;vertical-align:top;box-sizing:border-box;padding:20px;"> <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;"> <tr> <td style="font-family:sans-serif;font-size:14px;vertical-align:top;"> <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Good news!</p><p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">We\u2019ve received your email <strong>{{=it.subject}}</strong>, converted it into a tidy little web page and published it online:</p><p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;"><a href="https://publishth.is/{{=it.messageId}}" style="color:#FF5468;text-decoration:underline;">https://publishth.is/{{=it.messageId}}</a></p>{{? it.slug}}<p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;"><a href="{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}" style="color:#FF5468;text-decoration:underline;">{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}</a></p>{{?}}<p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">For a brief moment you were the creator of the newest page on the internet. Congratulations.</p><p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Sadly, that moment has passed. But you can be the creator of the newest page on the internet at any time. Simply send another email to <a href="mailto:page@publishthis.email" style="color:#FF5468;text-decoration:underline;">page@publishthis.email</a> to publish a page - we\u2019ll reply with a link to your new page in seconds.</p><p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Delete your page: <a href="{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}" style="color:#FF5468;text-decoration:underline;">{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}</a></p>{{? it.collectionId}}<p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">This page is part of your <strong>{{=it.label}}</strong> collection. Any pages you send to <strong>page+{{=it.label}}@publishthis.email</strong> will be added to this collection: <a href="{{=it.pteDomain}}/c/{{=it.collectionId}}" style="color:#FF5468;text-decoration:underline;">{{=it.pteDomain}}/c/{{=it.collectionId}}</a></p>{{?}}<p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Thanks,</p><a href="https://www.publishthis.email" style="color:#FF5468;text-decoration:underline;"><img src="http://i.imgur.com/QoCKNTi.png" width="262px" style="border:none;-ms-interpolation-mode:bicubic;max-width:100%;"/></a> </td></tr></table> </td></tr></table> <div class="footer" style="clear:both;padding-top:10px;text-align:center;width:100%;"> <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;"> <tr> <td class="content-block" style="font-family:sans-serif;font-size:14px;vertical-align:top;color:#999999;font-size:12px;text-align:center;"> <span class="apple-link" style="color:#999999;font-size:12px;text-align:center;">Publish This Email Pty Ltd, 6/63 Elizabeth St, Richmond, VIC 3121, Australia</span></td></tr><!-- <tr> <td class="content-block powered-by"> Powered by <a href="http://htmlemail.io">HTMLemail</a>. </td></tr>--> </table> </div></div></td><td style="font-family:sans-serif;font-size:14px;vertical-align:top;">&nbsp;</td></tr></table> </body></html>\n',
   'ru': '<p>\u041F\u0440\u0438\u0432\u0435\u0442!</p>\n<p>\u041C\u044B \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438 \u0432\u0430\u0448\u0435 \u043F\u0438\u0441\u044C\u043C\u043E <strong>{{=it.subject}}</strong>, \u043F\u0440\u0435\u0432\u0440\u0430\u0442\u0438\u043B\u0438 \u0435\u0433\u043E \u0432 \u0432\u0435\u0431-\u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443 \u0438 \u043E\u043F\u0443\u0431\u043B\u0438\u043A\u043E\u0432\u0430\u043B\u0438 \u0435\u0433\u043E \u043F\u043E \u044D\u0442\u043E\u0439 \u0441\u0441\u044B\u043B\u043A\u0435:</p>\n<p><a href="https://publishth.is/{{=it.messageId}}">https://publishth.is/{{=it.messageId}}</a></p>\n{{? it.slug}}<p><a href="{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}">{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}</a></p>{{?}}\n<p><strong>\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0435 <a href="https://www.publishthis.email">publishthis.email</a></strong></p>\n<p>\u0427\u0442\u043E\u0431\u044B \u0443\u0434\u0430\u043B\u0438\u0442\u044C \u0432\u0430\u0448\u0443 \u0432\u0435\u0431-\u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443, \u043F\u0435\u0440\u0435\u0439\u0434\u0438\u0442\u0435 \u043F\u043E \u0441\u0441\u044B\u043B\u043A\u0435: <a href="{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}">{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}</a></p>\n{{? it.collectionId}}\n<p>\u042D\u0442\u0430 \u0432\u0435\u0431-\u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0447\u0430\u0441\u0442\u044C\u044E \u043A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u0438: <a href="{{=it.pteDomain}}/c/{{=it.collectionId}}">{{=it.pteDomain}}/c/{{=it.collectionId}}</a></p>\n{{?}}\n',
   'zh': '<p>\u60A8\u597D\uFF0C</p>\n<p>\u6211\u4EEC\u5DF2\u6536\u5230\u60A8\u7684\u7535\u5B50\u90AE\u4EF6 <strong>{{=it.subject}}</strong>, \u5C06\u5176\u8F6C\u6362\u4E3A\u7F51\u9875\uFF0C\u5E76\u5728\u7EBF\u53D1\u5E03\uFF1A</p>\n<p><a href="https://publishth.is/{{=it.messageId}}">https://publishth.is/{{=it.messageId}}</a></p>\n{{? it.slug}}<p><a href="{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}">{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}</a></p>{{?}}\n<p><strong><a href="https://www.publishthis.email">publishthis.email</a></strong>\u611F\u8C22\u60A8</p>\n<p>\u5220\u9664\u60A8\u7684\u9875\u9762\uFF1A <a href="{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}">{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}</a></p>\n{{? it.collectionId}}\n<p>\u6B64\u9875\u9762\u662F\u6C47\u96C6\u7684\u4E00\u90E8\u5206\uFF1A <a href="{{=it.pteDomain}}/c/{{=it.collectionId}}">{{=it.pteDomain}}/c/{{=it.collectionId}}</a></p>\n{{?}}\n',
   'zh-t': '<p>\u60A8\u597D\uFF0C</p>\n<p>\u6211\u5011\u5DF2\u6536\u5230\u60A8\u7684\u96FB\u5B50\u90F5\u4EF6l <strong>{{=it.subject}}</strong>\uFF0C\u5C07\u5176\u8F49\u63DB\u70BA\u7DB2\u9801\uFF0C\u4E26\u5728\u7DDA\u767C\u5E03\uFF1A</p>\n<p><a href="https://publishth.is/{{=it.messageId}}">https://publishth.is/{{=it.messageId}}</a></p>\n{{? it.slug}}<p><a href="{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}">{{=it.pteDomain}}/{{=it.slug}}-{{=it.messageId}}</a></p>{{?}}\n<p><strong><a href="https://www.publishthis.email">publishthis.email</a></strong>\u611F\u8B1D\u60A8</p>\n<p>\u522A\u9664\u60A8\u7684\u9801\u9762\uFF1A<a href="{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}">{{=it.pteDomain}}/{{=it.messageId}}/delete/{{=it.editKey}}</a></p>\n{{? it.collectionId}}\n<p>\u6B64\u9801\u9762\u662F\u532F\u96C6\u7684\u4E00\u90E8\u5206\uFF1A<a href="{{=it.pteDomain}}/c/{{=it.collectionId}}">{{=it.pteDomain}}/c/{{=it.collectionId}}</a></p>\n{{?}}\n'
@@ -465,17 +471,17 @@ exports.replyEmails = replyEmails;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.addBulkSubscribers = exports.getList = exports.sendNewSubscriberNotification = exports.getSubscriberFromSubscriberId = exports.getListFromSubscriber = exports.markPostSent = exports.listSend = exports.getListSubscribers = exports.addListIdToPage = exports.sendListReplyNoSubs = exports.sendNewListReply = exports.sendListReply = exports.sendNewListWelcomeWithPage = exports.sendNewListWelcome = exports.addListToDB = exports.isNewList = exports.unsubscribe = exports.verifySubscriberId = exports.sendSubscriberVerification = exports.isNotSubscribed = exports.addSubscriber = exports.slugify = exports.acceptLanguages = exports.useLanguage = exports.clearCache = exports.collectionsProcess = exports.getCollection = exports.addTimeSince = exports.preRender = exports.deleteCollectionItemFromDynamo = exports.deleteEmailFromDynamo = exports.getStoredEmail = exports.storeInDynamo = exports.sendListPreview = exports.sendReply = exports.processListEmail = exports.processEmail = exports.getRawEmail = undefined;
+exports.sendListWelcomeAPI = exports.addListToDBAPI = exports.isNewListAPI = exports.addBulkSubscribers = exports.getList = exports.sendNewSubscriberNotification = exports.getSubscriberFromSubscriberId = exports.getListFromSubscriber = exports.markPostSent = exports.listSend = exports.getListSubscribers = exports.addListIdToPage = exports.sendListReplyNoSubs = exports.sendNewListReply = exports.sendListReply = exports.sendNewListWelcomeWithPage = exports.sendNewListWelcome = exports.addListToDB = exports.isNewList = exports.unsubscribe = exports.verifySubscriberId = exports.sendSubscriberVerification = exports.isNotSubscribed = exports.addSubscriber = exports.slugify = exports.acceptLanguages = exports.useLanguage = exports.clearCache = exports.collectionsProcess = exports.getCollection = exports.addTimeSince = exports.preRender = exports.deleteCollectionItemFromDynamo = exports.deleteEmailFromDynamo = exports.getStoredEmail = exports.storeInDynamo = exports.sendListPreview = exports.sendReply = exports.processListEmail = exports.processAPIEmail = exports.processEmail = exports.getRawEmail = undefined;
 
 var _get_raw_email = __webpack_require__(24);
 
-var _process_email = __webpack_require__(34);
+var _process_email = __webpack_require__(35);
 
-var _send_reply = __webpack_require__(35);
+var _send_reply = __webpack_require__(36);
 
-var _list_preview = __webpack_require__(28);
+var _list_preview = __webpack_require__(29);
 
-var _store_in_dynamo = __webpack_require__(36);
+var _store_in_dynamo = __webpack_require__(37);
 
 var _get_stored_email = __webpack_require__(25);
 
@@ -491,28 +497,31 @@ var _localise = __webpack_require__(8);
 
 var _titleToSlug = __webpack_require__(9);
 
-var _list_subscribe = __webpack_require__(31);
+var _list_subscribe = __webpack_require__(32);
 
-var _list_verify = __webpack_require__(33);
+var _list_verify = __webpack_require__(34);
 
-var _list_unsubscribe = __webpack_require__(32);
+var _list_unsubscribe = __webpack_require__(33);
 
 var _list_create = __webpack_require__(27);
 
-var _list_reply = __webpack_require__(29);
+var _list_reply = __webpack_require__(30);
 
 var _add_listid_to_page = __webpack_require__(17);
 
 var _get_list_subscribers = __webpack_require__(23);
 
-var _list_send = __webpack_require__(30);
+var _list_send = __webpack_require__(31);
 
 var _get_list = __webpack_require__(22);
 
 var _list_bulk_subscribe = __webpack_require__(26);
 
+var _list_create_api = __webpack_require__(28);
+
 exports.getRawEmail = _get_raw_email.getRawEmail;
 exports.processEmail = _process_email.processEmail;
+exports.processAPIEmail = _process_email.processAPIEmail;
 exports.processListEmail = _process_email.processListEmail;
 exports.sendReply = _send_reply.sendReply;
 exports.sendListPreview = _list_preview.sendListPreview;
@@ -549,6 +558,9 @@ exports.getSubscriberFromSubscriberId = _list_verify.getSubscriberFromSubscriber
 exports.sendNewSubscriberNotification = _list_verify.sendNewSubscriberNotification;
 exports.getList = _get_list.getList;
 exports.addBulkSubscribers = _list_bulk_subscribe.addBulkSubscribers;
+exports.isNewListAPI = _list_create_api.isNewListAPI;
+exports.addListToDBAPI = _list_create_api.addListToDBAPI;
+exports.sendListWelcomeAPI = _list_reply.sendListWelcomeAPI;
 
 /***/ }),
 /* 12 */
@@ -605,8 +617,6 @@ var _environment = __webpack_require__(0);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var addListIdToPage = function addListIdToPage(mailObj) {
-  console.log('breaking here?:');
-  console.log(mailObj);
   // generate sendKey
   mailObj.sendKey = _shortid2.default.generate() + _shortid2.default.generate();
 
@@ -640,7 +650,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.clearCache = undefined;
 
-var _cloudflare = __webpack_require__(49);
+var _cloudflare = __webpack_require__(51);
 
 var _cloudflare2 = _interopRequireDefault(_cloudflare);
 
@@ -693,13 +703,22 @@ var getCollection = function getCollection(emailObj) {
     email: emailObj.from[0].address,
     collectionName: emailObj.label
   };
+  console.log('item, emailObj:');
+  console.log(item);
+  console.log(emailObj);
 
   return _dynamo2.default.getResource({
     TableName: _environment.config.COLLECTION_TABLE,
     Key: item
-  }).then(function (_ref) {
+  })
+  // .then(result => {
+  //   console.log('result')
+  //   console.log(result)
+  // })
+  .then(function (_ref) {
     var collectionId = _ref.collectionId;
 
+    // console.log(collectionId)
     emailObj.collectionId = collectionId;
     return emailObj;
   }).catch(function (err) {
@@ -707,6 +726,8 @@ var getCollection = function getCollection(emailObj) {
     // use "~" instead of "-" for shortid (we use "-" as a delimiter for collection names)
     _shortid2.default.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~_');
     emailObj.collectionId = item.collectionId = _shortid2.default.generate();
+    // emailObj.collectionId = shortid.generate()
+    // item.collectionId = emailObj.collectionId
     return _dynamo2.default.putResource({
       TableName: _environment.config.COLLECTION_TABLE,
       Item: item,
@@ -935,7 +956,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getRawEmail = undefined;
 
-var _s = __webpack_require__(37);
+var _s = __webpack_require__(38);
 
 var _s2 = _interopRequireDefault(_s);
 
@@ -1129,6 +1150,80 @@ exports.addListToDB = addListToDB;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.addListToDBAPI = exports.isNewListAPI = undefined;
+
+var _dynamo = __webpack_require__(1);
+
+var _dynamo2 = _interopRequireDefault(_dynamo);
+
+var _ses = __webpack_require__(2);
+
+var _ses2 = _interopRequireDefault(_ses);
+
+var _dot = __webpack_require__(3);
+
+var _dot2 = _interopRequireDefault(_dot);
+
+var _shortid = __webpack_require__(4);
+
+var _shortid2 = _interopRequireDefault(_shortid);
+
+var _environment = __webpack_require__(0);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Checks if a list exists in the DB, if not, builds and returns new list.
+var isNewListAPI = function isNewListAPI(list) {
+  var query = {
+    TableName: _environment.config.LISTS_TABLE,
+    IndexName: 'ownerEmail-collectionName-index',
+    KeyConditionExpression: "ownerEmail = :ownerEmail and collectionName = :collectionName",
+    // FilterExpression: "collectionName = :collectionName",
+    ExpressionAttributeValues: {
+      ":ownerEmail": list.ownerEmail,
+      ":collectionName": list.collectionName
+    },
+    Limit: 1 };
+
+  return _dynamo2.default.query(query).then(function (result) {
+    console.log(result);
+    if (result.Count == 0) {
+      // build new list
+      list.listId = _shortid2.default.generate();
+      list.editKey = _shortid2.default.generate() + _shortid2.default.generate();
+      list.count_subscribers = 0;
+      list.count_unsubscribers = 0;
+      list.title = list.listName;
+      list.newList = true;
+    } else {
+      return Promise.reject(new Error('List exists'));
+    }
+    return list;
+  });
+};
+
+var addListToDBAPI = function addListToDBAPI(list) {
+  return _dynamo2.default.putResource({
+    TableName: _environment.config.LISTS_TABLE,
+    Item: list
+  }).then(function () {
+    return list;
+  });
+};
+
+exports.isNewListAPI = isNewListAPI;
+exports.addListToDBAPI = addListToDBAPI;
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.sendListPreview = undefined;
 
 var _ses = __webpack_require__(2);
@@ -1141,11 +1236,13 @@ var _dot2 = _interopRequireDefault(_dot);
 
 var _emailReply = __webpack_require__(10);
 
+var _environment = __webpack_require__(0);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var sendListPreview = function sendListPreview(mailObj) {
 
-  mailObj.pteDomain = 'https://www.publishthis.email';
+  mailObj.pteDomain = 'https://www.' + _environment.config.DOMAIN;
 
   // set reply template for the appropriate language
   var replyTemplate = _dot2.default.template(_emailReply.replyEmails[mailObj.language]);
@@ -1158,7 +1255,7 @@ var sendListPreview = function sendListPreview(mailObj) {
     },
     Message: {
       Subject: {
-        Data: mailObj.subject + ' - publishthis.email',
+        Data: mailObj.subject + ' - listarmy.com',
         Charset: 'UTF-8'
       },
       Body: {
@@ -1168,9 +1265,9 @@ var sendListPreview = function sendListPreview(mailObj) {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@publishthis.email>',
-    ReplyToAddresses: ['"Publish This Email" <hello@publishthis.email>'],
-    ReturnPath: 'return@publishthis.email'
+    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
   return _ses2.default.sendEmail(params);
@@ -1179,7 +1276,7 @@ var sendListPreview = function sendListPreview(mailObj) {
 exports.sendListPreview = sendListPreview;
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1188,7 +1285,7 @@ exports.sendListPreview = sendListPreview;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.sendListReplyNoSubs = exports.sendListReply = exports.sendNewListReply = undefined;
+exports.sendListWelcomeAPI = exports.sendListReplyNoSubs = exports.sendListReply = exports.sendNewListReply = undefined;
 
 var _dynamo = __webpack_require__(1);
 
@@ -1211,6 +1308,42 @@ var _environment = __webpack_require__(0);
 var _emails = __webpack_require__(6);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// send welcome email to new lists created via API
+var sendListWelcomeAPI = function sendListWelcomeAPI(mailObj) {
+  // remove defaultglobal label
+  if (mailObj.label == 'defaultglobal') {
+    mailObj.label = null;
+  }
+  var template = _dot2.default.template(_emails.tplListNewAPI);
+  var emailBody = template(mailObj);
+
+  var params = {
+    Destination: {
+      ToAddresses: [mailObj.list.ownerEmail],
+      BccAddresses: ['publishthisemail@gmail.com']
+    },
+    Message: {
+      Subject: {
+        Data: 'Your new list: ' + mailObj.subject,
+        Charset: 'UTF-8'
+      },
+      Body: {
+        Html: {
+          Data: emailBody,
+          Charset: 'UTF-8'
+        }
+      }
+    },
+    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    ReturnPath: 'return@' + _environment.config.DOMAIN
+  };
+
+  return _ses2.default.sendEmail(params).then(function () {
+    return mailObj;
+  });
+};
 
 // send welcome email to new lists created with a page
 var sendNewListReply = function sendNewListReply(mailObj) {
@@ -1239,9 +1372,9 @@ var sendNewListReply = function sendNewListReply(mailObj) {
           }
         }
       },
-      Source: '"Publish This Email" <noreply@publishthis.email>',
-      ReplyToAddresses: ['"Publish This Email" <hello@publishthis.email>'],
-      ReturnPath: 'return@publishthis.email'
+      Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
+      ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+      ReturnPath: 'return@' + _environment.config.DOMAIN
     };
 
     return _ses2.default.sendEmail(params).then(function () {
@@ -1272,9 +1405,9 @@ var sendListReply = function sendListReply(mailObj) {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@publishthis.email>',
-    ReplyToAddresses: ['"Publish This Email" <hello@publishthis.email>'],
-    ReturnPath: 'return@publishthis.email'
+    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
   return _ses2.default.sendEmail(params).then(function () {
@@ -1303,9 +1436,9 @@ var sendListReplyNoSubs = function sendListReplyNoSubs(mailObj) {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@publishthis.email>',
-    ReplyToAddresses: ['"Publish This Email" <hello@publishthis.email>'],
-    ReturnPath: 'return@publishthis.email'
+    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
   return _ses2.default.sendEmail(params).then(function () {
@@ -1316,9 +1449,10 @@ var sendListReplyNoSubs = function sendListReplyNoSubs(mailObj) {
 exports.sendNewListReply = sendNewListReply;
 exports.sendListReply = sendListReply;
 exports.sendListReplyNoSubs = sendListReplyNoSubs;
+exports.sendListWelcomeAPI = sendListWelcomeAPI;
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1370,9 +1504,9 @@ var listSend = function listSend(mailPackage) {
             Html: { Data: emailBody, Charset: 'UTF-8' }
           }
         },
-        Source: '"' + mailPackage.list.title + '" <noreply@publishthis.email>',
+        Source: '"' + mailPackage.list.title + '" <noreply@' + _environment.config.DOMAIN + '>',
         ReplyToAddresses: ['"' + mailPackage.list.title + '" <' + mailPackage.from[0].address + '>'],
-        ReturnPath: 'return@publishthis.email'
+        ReturnPath: 'return@' + _environment.config.DOMAIN
       };
       return _ses2.default.sendEmail(params);
     });
@@ -1411,7 +1545,7 @@ exports.listSend = listSend;
 exports.markPostSent = markPostSent;
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1455,7 +1589,7 @@ var sendSubscriberVerification = function sendSubscriberVerification(subscriber)
     },
     Message: {
       Subject: {
-        Data: 'Verify your email address - publishthis.email',
+        Data: 'Verify your email address - listarmy.com',
         Charset: 'UTF-8'
       },
       Body: {
@@ -1465,9 +1599,9 @@ var sendSubscriberVerification = function sendSubscriberVerification(subscriber)
         }
       }
     },
-    Source: '"Publish This Email" <noreply@publishthis.email>',
-    ReplyToAddresses: ['"Publish This Email" <hello@publishthis.email>'],
-    ReturnPath: 'return@publishthis.email'
+    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
   return _ses2.default.sendEmail(params);
@@ -1511,7 +1645,7 @@ exports.addSubscriber = addSubscriber;
 exports.sendSubscriberVerification = sendSubscriberVerification;
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1542,7 +1676,7 @@ var unsubscribe = function unsubscribe(subscriberId) {
 exports.unsubscribe = unsubscribe;
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1626,9 +1760,9 @@ var sendNewSubscriberNotification = function sendNewSubscriberNotification(list)
         }
       }
     },
-    Source: '"Publish This Email" <noreply@publishthis.email>',
-    ReplyToAddresses: ['"Publish This Email" <hello@publishthis.email>'],
-    ReturnPath: 'return@publishthis.email'
+    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
   return _ses2.default.sendEmail(params);
@@ -1640,7 +1774,7 @@ exports.getListFromSubscriber = getListFromSubscriber;
 exports.sendNewSubscriberNotification = sendNewSubscriberNotification;
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1649,9 +1783,9 @@ exports.sendNewSubscriberNotification = sendNewSubscriberNotification;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.addTimeSince = exports.preRender = exports.processListEmail = exports.processEmail = undefined;
+exports.processAPIEmail = exports.addTimeSince = exports.preRender = exports.processListEmail = exports.processEmail = undefined;
 
-var _mailparser = __webpack_require__(52);
+var _mailparser = __webpack_require__(54);
 
 var _mailparser2 = _interopRequireDefault(_mailparser);
 
@@ -1663,17 +1797,19 @@ var _shortid = __webpack_require__(4);
 
 var _shortid2 = _interopRequireDefault(_shortid);
 
-var _imgur = __webpack_require__(39);
+var _imgur = __webpack_require__(40);
 
 var _imgur2 = _interopRequireDefault(_imgur);
 
-var _cheerio = __webpack_require__(48);
+var _cheerio = __webpack_require__(50);
 
 var _cheerio2 = _interopRequireDefault(_cheerio);
 
 var _localise = __webpack_require__(8);
 
 var _titleToSlug = __webpack_require__(9);
+
+var _environment = __webpack_require__(0);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1784,6 +1920,20 @@ var tidyEmail = function tidyEmail(email) {
   return email;
 };
 
+var tidyAPIEmail = function tidyAPIEmail(email) {
+  return new Promise(function (resolve, reject) {
+    if (!email.html && email.text) {
+      email.html = '<p>' + email.text.replace(/[\n]+/g, '</p><p>') + '</p>';
+    }
+    // replace undefined subject and body with empty strings
+    if (!email.subject) {
+      email.subject = ' ';
+    }
+
+    resolve(email);
+  });
+};
+
 // detect email content language and set a language code on the email object
 var setLanguage = function setLanguage(email) {
   email.language = (0, _localise.detectLanguage)(email);
@@ -1876,7 +2026,14 @@ var filterLinks = function filterLinks(email) {
 
 var buildEmailObj = function buildEmailObj(rawEmail) {
   var messageId = rawEmail.messageId;
-  var to = rawEmail.to;
+
+  var to = ['list@' + _environment.config.DOMAIN];
+  if (rawEmail.to) {
+    to = rawEmail.to;
+  } else if (rawEmail.label) {
+    to = [{ address: 'list+' + rawEmail.label + '@' + _environment.config.DOMAIN }];
+  }
+
   var from = rawEmail.from;
   var cc = rawEmail.cc;
   var bcc = rawEmail.bcc;
@@ -1885,6 +2042,7 @@ var buildEmailObj = function buildEmailObj(rawEmail) {
   var date = rawEmail.date;
   var language = rawEmail.language;
   var slug = rawEmail.slug;
+
   // join to, cc, bcc
   // match for staging/page/email and label
   var recipients = to;
@@ -1896,7 +2054,9 @@ var buildEmailObj = function buildEmailObj(rawEmail) {
   }
   var labelMatch = recipients.map(function (r) {
     return r.address;
-  }).join(',').match(/(staging-list|staging|page|email|list)(?:\+)([\w]+)(?:@publishthis.email)/);
+  }).join(',').match(/(page|email|list)(?:\+)([\w]+)(?:@(?:dev.)?listarmy.com)/);
+
+  _shortid2.default.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~_');
 
   var output = {
     to: to,
@@ -1904,7 +2064,7 @@ var buildEmailObj = function buildEmailObj(rawEmail) {
     subject: subject,
     html: html,
     messageId: _shortid2.default.generate(),
-    headerMessageId: messageId,
+    // headerMessageId: messageId,
     timeAdded: new Date().getTime(),
     language: language,
     editKey: _shortid2.default.generate() + _shortid2.default.generate(),
@@ -1919,8 +2079,23 @@ var buildEmailObj = function buildEmailObj(rawEmail) {
   if (labelMatch) {
     output.label = labelMatch[2];
   }
+  if (rawEmail.label) {
+    output.label = rawEmail.label;
+  }
+  if (rawEmail.list && rawEmail.list.listId) {
+    output.listId = rawEmail.list.listId;
+  }
+
+  console.log('output');
+  console.log(output);
 
   return output;
+};
+
+var processAPIEmail = function processAPIEmail(email) {
+  console.log('processing');
+  return tidyAPIEmail(email).then(setLanguage).then(generateSlug).then(buildEmailObj);
+  // console.log(email)
 };
 
 var processEmail = function processEmail(rawEmail) {
@@ -1985,9 +2160,10 @@ exports.processEmail = processEmail;
 exports.processListEmail = processListEmail;
 exports.preRender = preRender;
 exports.addTimeSince = addTimeSince;
+exports.processAPIEmail = processAPIEmail;
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2008,6 +2184,8 @@ var _dot2 = _interopRequireDefault(_dot);
 
 var _emailReply = __webpack_require__(10);
 
+var _environment = __webpack_require__(0);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var sendReply = function sendReply(mailObj) {
@@ -2023,9 +2201,10 @@ var sendReply = function sendReply(mailObj) {
   var emailStr = addresses.map(function (r) {
     return r.address;
   }).join(',');
-  var stagingTest = /staging(\+[\w\-]+)?@publishthis\.email/;
 
-  mailObj.pteDomain = stagingTest.test(emailStr) ? 'https://staging.publishthis.email' : 'https://www.publishthis.email';
+  var stagingTest = /dev\.listarmy\.com/;
+
+  mailObj.pteDomain = stagingTest.test(emailStr) ? 'https://dev.listarmy.com' : 'https://www.listarmy.com';
 
   // set reply template for the appropriate language
   var replyTemplate = _dot2.default.template(_emailReply.replyEmails[mailObj.language]);
@@ -2038,7 +2217,7 @@ var sendReply = function sendReply(mailObj) {
     },
     Message: {
       Subject: {
-        Data: mailObj.subject + ' - publishthis.email',
+        Data: mailObj.subject + ' - ' + _environment.config.DOMAIN,
         Charset: 'UTF-8'
       },
       Body: {
@@ -2048,9 +2227,9 @@ var sendReply = function sendReply(mailObj) {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@publishthis.email>',
-    ReplyToAddresses: ['"Publish This Email" <hello@publishthis.email>'],
-    ReturnPath: 'return@publishthis.email'
+    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
   return _ses2.default.sendEmail(params);
@@ -2059,7 +2238,7 @@ var sendReply = function sendReply(mailObj) {
 exports.sendReply = sendReply;
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2091,7 +2270,7 @@ var storeInDynamo = function storeInDynamo(emailObj) {
 exports.storeInDynamo = storeInDynamo;
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2125,7 +2304,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2172,6 +2351,11 @@ app.set('view engine', 'dot');
 
 app.use(_express2.default.static(path.resolve(__dirname, 'public')));
 app.use((0, _serveFavicon2.default)(path.join(__dirname, 'public', 'favicon.ico')));
+
+app.get('/landing', function (req, res) {
+  var context = { API_URL: _environment.config.API_URL };
+  res.render('landing', context);
+});
 
 app.get('/', function (req, res) {
   var lang = (0, _actions.useLanguage)(req); // get browser language
@@ -2333,7 +2517,7 @@ app.get('/:slug/delete/:editKey', function (req, res) {
         res.render('alert', alert);
         // clear cache
         var cfParams = {
-          files: ['http://www.publishthis.email/' + result.messageId, 'https://www.publishthis.email/' + result.messageId]
+          files: ['http://www.listarmy.com/' + result.messageId, 'https://www.listarmy.com/' + result.messageId]
         };
         (0, _actions.clearCache)(cfParams);
       }).catch(function (e) {
@@ -2367,12 +2551,16 @@ app.get('/:slug/delete/:editKey', function (req, res) {
 });
 
 app.get('/:slug', function (req, res) {
-  //extract messageId from slug
+  console.log('Page route');
+  // extract messageId from slug
   var slug = req.params.slug;
-  var messageId = slug.slice(slug.length - 9, slug.length);
-
+  console.log(slug);
+  // complicated regex to account for URL characters upgrade
+  // replaced legacy '-' with '~', new regex accounts for shortid 7-14 characters
+  var messageId = slug.match(/([A-Za-z0-9-_]{9}|[A-Za-z0-9~_]{7,14})$/)[0];
+  console.log(messageId);
   (0, _actions.getStoredEmail)(messageId).then(_actions.preRender).then(function (mailObj) {
-
+    console.log(mailObj);
     mailObj.html = mailObj.html.replace(/<p><br \/>\n<\/p>/g, ''); //attempting to tidy breaks
     // set footer language
     if (!mailObj.language) {
@@ -2380,15 +2568,17 @@ app.get('/:slug', function (req, res) {
     }
     // add API url
     mailObj.API_URL = _environment.config.API_URL;
-    // page or email
-    if (mailObj.to[0].address.startsWith('email')) {
+    // subscription page, page or email template
+    if (mailObj.subscriptionPage) {
+      res.render('subscribe', mailObj);
+    } else if (mailObj.to[0].address.startsWith('email')) {
       mailObj.timestamp = new Date(mailObj.timeAdded).toString();
       res.render('email', mailObj);
     } else {
       res.render('page', mailObj);
     }
   }).catch(function (e) {
-    // console.log(e)
+    console.log(e);
     res.status(404);
     res.render('404');
   });
@@ -2440,7 +2630,7 @@ app.listen(_environment.config.PORT, function () {
 });
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2450,7 +2640,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _imgur = __webpack_require__(51);
+var _imgur = __webpack_require__(53);
 
 var _imgur2 = _interopRequireDefault(_imgur);
 
@@ -2470,7 +2660,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2479,12 +2669,25 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var tplDelivery = "<!DOCTYPE html>\n<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">\n<head>\n    <meta charset=\"utf-8\"> <!-- utf-8 works for most cases -->\n    <meta name=\"viewport\" content=\"width=device-width\"> <!-- Forcing initial-scale shouldn't be necessary -->\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <!-- Use the latest (edge) version of IE rendering engine -->\n    <meta name=\"x-apple-disable-message-reformatting\">  <!-- Disable auto-scale in iOS 10 Mail entirely -->\n    <title>{{=it.subject}}</title> <!-- The title tag shows in email notifications, like Android 4.4. -->\n\n\t<!-- CSS Reset -->\n    <style>\n\n        /* What it does: Remove spaces around the email design added by some email clients. */\n        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */\n        html,\n        body {\n            margin: 0 auto !important;\n            padding: 0 !important;\n            height: 100% !important;\n            width: 100% !important;\n        }\n\n        /* What it does: Stops email clients resizing small text. */\n        * {\n            -ms-text-size-adjust: 100%;\n            -webkit-text-size-adjust: 100%;\n        }\n\n        /* What it does: Centers email on Android 4.4 */\n        div[style*=\"margin: 16px 0\"] {\n            margin:0 !important;\n        }\n\n        /* What it does: Stops Outlook from adding extra spacing to tables. */\n        table,\n        td {\n            mso-table-lspace: 0pt !important;\n            mso-table-rspace: 0pt !important;\n        }\n\n        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */\n        table {\n            border-spacing: 0 !important;\n            border-collapse: collapse !important;\n            table-layout: fixed !important;\n            margin: 0 auto !important;\n        }\n        table table table {\n            table-layout: auto;\n        }\n\n        /* What it does: Uses a better rendering method when resizing images in IE. */\n        img {\n            -ms-interpolation-mode:bicubic;\n            max-width: 100%;\n        }\n\n        /* What it does: A work-around for email clients meddling in triggered links. */\n        *[x-apple-data-detectors],\t/* iOS */\n        .x-gmail-data-detectors, \t/* Gmail */\n        .x-gmail-data-detectors *,\n        .aBn {\n            border-bottom: 0 !important;\n            cursor: default !important;\n            color: inherit !important;\n            text-decoration: none !important;\n            font-size: inherit !important;\n            font-family: inherit !important;\n            font-weight: inherit !important;\n            line-height: inherit !important;\n        }\n\n        /* What it does: Prevents Gmail from displaying an download button on large, non-linked images. */\n        .a6S {\n\t        display: none !important;\n\t        opacity: 0.01 !important;\n        }\n        /* If the above doesn't work, add a .g-img class to any image in question. */\n        img.g-img + div {\n\t        display:none !important;\n\t   \t}\n\n        /* What it does: Prevents underlining the button text in Windows 10 */\n        .button-link {\n            text-decoration: none !important;\n        }\n\n        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */\n        /* Create one of these media queries for each additional viewport size you'd like to fix */\n        /* Thanks to Eric Lepetit (@ericlepetitsf) for help troubleshooting */\n        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) { /* iPhone 6 and 6+ */\n            .email-container {\n                min-width: 375px !important;\n            }\n        }\n\n    </style>\n\n    <!-- Progressive Enhancements -->\n    <style>\n\n        /* What it does: Hover styles for buttons */\n        .button-td,\n        .button-a {\n            transition: all 100ms ease-in;\n        }\n        .button-td:hover,\n        .button-a:hover {\n            background: #555555 !important;\n            border-color: #555555 !important;\n        }\n\n        /* Media Queries */\n        @media screen and (max-width: 600px) {\n\n            /* What it does: Adjust typography on small screens to improve readability */\n\t\t\t.email-container p {\n\t\t\t\tfont-size: 17px !important;\n\t\t\t\tline-height: 22px !important;\n\t\t\t}\n\n\t\t}\n\n\t</style>\n\n\t<!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->\n\t<!--[if gte mso 9]>\n\t<xml>\n\t\t<o:OfficeDocumentSettings>\n\t\t\t<o:AllowPNG/>\n\t\t\t<o:PixelsPerInch>96</o:PixelsPerInch>\n\t\t</o:OfficeDocumentSettings>\n\t</xml>\n\t<![endif]-->\n\n</head>\n<body width=\"100%\" bgcolor=\"#f7f7f7\" style=\"margin: 0; mso-line-height-rule: exactly;\">\n\t<center style=\"width: 100%; background: #f7f7f7; text-align: left;\">\n\n\t\t<!-- Visually Hidden Preheader Text : BEGIN -->\n\t\t<div style=\"display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;\">\n\t\t\t{{=it.subject}}\n\t\t</div>\n\t\t<!-- Visually Hidden Preheader Text : END -->\n\n\t\t<!--\n\t\t\tSet the email width. Defined in two places:\n\t\t\t1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.\n\t\t\t2. MSO tags for Desktop Windows Outlook enforce a 600px width.\n\t\t-->\n\t\t<div style=\"max-width: 600px; margin: auto;\" class=\"email-container\">\n\t\t\t<!--[if mso]>\n\t\t\t<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"600\" align=\"center\">\n\t\t\t<tr>\n\t\t\t<td>\n\t\t\t<![endif]-->\n\n      <!-- Clear Spacer : BEGIN -->\n      <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n        <tr>\n          <td aria-hidden=\"true\" height=\"40\" style=\"font-size: 0; line-height: 0;\">\n            &nbsp;\n          </td>\n        </tr>\n      </table>\n      <!-- Clear Spacer : END -->\n\n\t\t\t<!-- Email Body : BEGIN -->\n\t\t\t<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\" width=\"100%\" style=\"max-width: 600px;\">\n\n\t\t\t\t<!-- 1 Column Text + Button : BEGIN -->\n\t\t\t\t<tr>\n\t\t\t\t\t<td bgcolor=\"#ffffff\">\n\t\t\t\t\t\t<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<td style=\"padding: 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;\">\n\t\t\t\t\t\t\t\t\t<h1 style=\"margin: 0 0 10px 0; font-family: sans-serif; font-size: 24px; line-height: 27px; color: #333333; font-weight: normal;\">{{=it.subject}}</h1>\n                  {{=it.html}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t<!-- <tr>\n\t\t\t\t\t\t\t\t<td style=\"padding: 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;\">\n\t\t\t\t\t\t\t\t\t<h2 style=\"margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 21px; color: #333333; font-weight: bold;\">Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.</h2>\n\t\t\t\t\t\t\t\t\t<p style=\"margin: 0;\">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.</p>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr> -->\n\t\t\t\t\t\t</table>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t\t<!-- 1 Column Text + Button : END -->\n\n\t\t\t\t<!-- Clear Spacer : BEGIN -->\n\t\t\t\t<tr>\n\t\t\t\t\t<td aria-hidden=\"true\" height=\"40\" style=\"font-size: 0; line-height: 0;\">\n\t\t\t\t\t\t&nbsp;\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t\t<!-- Clear Spacer : END -->\n\n\t\t\t</table>\n\t\t\t<!-- Email Body : END -->\n\n\t\t\t<!-- Email Footer : BEGIN -->\n\t\t\t<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\" width=\"100%\" style=\"max-width: 680px;\">\n\t\t\t\t<tr>\n\t\t\t\t\t<td style=\"padding: 20px 10px;width: 100%;font-size: 12px; font-family: sans-serif; line-height:18px; text-align: center; color: #888888;\" class=\"x-gmail-data-detectors\">\n\t\t\t\t\t\t<webversion style=\"color:#cccccc; text-decoration:underline; font-weight: bold;\"><a href=\"http://www.publishthis.email/{{=it.messageId}}\">View as a Web Page</a></webversion>\n\t\t\t\t\t\t<br>\n\t\t\t\t\t\tPublish This Email Pty Ltd<br>Unit 6, 63 Elizabeth St, Richmond, VIC 3121, Australia\n\t\t\t\t\t\t<br>\n\t\t\t\t\t\t<unsubscribe style=\"color:#888888; text-decoration:underline;\"><a href=\"https://www.publishthis.email/unsubscribe?sid={{=it.subscriber.subscriberId}}\">Unsubscribe</a></unsubscribe>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<!-- Email Footer : END -->\n\n\t\t\t<!--[if mso]>\n\t\t\t</td>\n\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<![endif]-->\n\t\t</div>\n\n    </center>\n</body>\n</html>\n";
+var tplDelivery = "<!DOCTYPE html>\n<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">\n<head>\n    <meta charset=\"utf-8\"> <!-- utf-8 works for most cases -->\n    <meta name=\"viewport\" content=\"width=device-width\"> <!-- Forcing initial-scale shouldn't be necessary -->\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <!-- Use the latest (edge) version of IE rendering engine -->\n    <meta name=\"x-apple-disable-message-reformatting\">  <!-- Disable auto-scale in iOS 10 Mail entirely -->\n    <title>{{=it.subject}}</title> <!-- The title tag shows in email notifications, like Android 4.4. -->\n\n\t<!-- CSS Reset -->\n    <style>\n\n        /* What it does: Remove spaces around the email design added by some email clients. */\n        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */\n        html,\n        body {\n            margin: 0 auto !important;\n            padding: 0 !important;\n            height: 100% !important;\n            width: 100% !important;\n        }\n\n        /* What it does: Stops email clients resizing small text. */\n        * {\n            -ms-text-size-adjust: 100%;\n            -webkit-text-size-adjust: 100%;\n        }\n\n        /* What it does: Centers email on Android 4.4 */\n        div[style*=\"margin: 16px 0\"] {\n            margin:0 !important;\n        }\n\n        /* What it does: Stops Outlook from adding extra spacing to tables. */\n        table,\n        td {\n            mso-table-lspace: 0pt !important;\n            mso-table-rspace: 0pt !important;\n        }\n\n        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */\n        table {\n            border-spacing: 0 !important;\n            border-collapse: collapse !important;\n            table-layout: fixed !important;\n            margin: 0 auto !important;\n        }\n        table table table {\n            table-layout: auto;\n        }\n\n        /* What it does: Uses a better rendering method when resizing images in IE. */\n        img {\n            -ms-interpolation-mode:bicubic;\n            max-width: 100%;\n        }\n\n        h1{\n            line-height: 1.3em;\n        }\n\n        /* What it does: A work-around for email clients meddling in triggered links. */\n        *[x-apple-data-detectors],\t/* iOS */\n        .x-gmail-data-detectors, \t/* Gmail */\n        .x-gmail-data-detectors *,\n        .aBn {\n            border-bottom: 0 !important;\n            cursor: default !important;\n            color: inherit !important;\n            text-decoration: none !important;\n            font-size: inherit !important;\n            font-family: inherit !important;\n            font-weight: inherit !important;\n            line-height: inherit !important;\n        }\n\n        /* What it does: Prevents Gmail from displaying an download button on large, non-linked images. */\n        .a6S {\n\t        display: none !important;\n\t        opacity: 0.01 !important;\n        }\n        /* If the above doesn't work, add a .g-img class to any image in question. */\n        img.g-img + div {\n\t        display:none !important;\n\t   \t}\n\n        /* What it does: Prevents underlining the button text in Windows 10 */\n        .button-link {\n            text-decoration: none !important;\n        }\n\n        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */\n        /* Create one of these media queries for each additional viewport size you'd like to fix */\n        /* Thanks to Eric Lepetit (@ericlepetitsf) for help troubleshooting */\n        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) { /* iPhone 6 and 6+ */\n            .email-container {\n                min-width: 375px !important;\n            }\n        }\n\n    </style>\n\n    <!-- Progressive Enhancements -->\n    <style>\n\n        /* What it does: Hover styles for buttons */\n        .button-td,\n        .button-a {\n            transition: all 100ms ease-in;\n        }\n        .button-td:hover,\n        .button-a:hover {\n            background: #555555 !important;\n            border-color: #555555 !important;\n        }\n\n        /* Media Queries */\n        @media screen and (max-width: 600px) {\n\n            /* What it does: Adjust typography on small screens to improve readability */\n\t\t\t.email-container p {\n\t\t\t\tfont-size: 17px !important;\n\t\t\t\tline-height: 22px !important;\n\t\t\t}\n\n\t\t}\n\n\t</style>\n\n\t<!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->\n\t<!--[if gte mso 9]>\n\t<xml>\n\t\t<o:OfficeDocumentSettings>\n\t\t\t<o:AllowPNG/>\n\t\t\t<o:PixelsPerInch>96</o:PixelsPerInch>\n\t\t</o:OfficeDocumentSettings>\n\t</xml>\n\t<![endif]-->\n\n</head>\n<body width=\"100%\" bgcolor=\"#f7f7f7\" style=\"margin: 0; mso-line-height-rule: exactly;\">\n\t<center style=\"width: 100%; background: #f7f7f7; text-align: left;\">\n\n\t\t<!-- Visually Hidden Preheader Text : BEGIN -->\n\t\t<div style=\"display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;\">\n\t\t\t{{=it.subject}}\n\t\t</div>\n\t\t<!-- Visually Hidden Preheader Text : END -->\n\n\t\t<!--\n\t\t\tSet the email width. Defined in two places:\n\t\t\t1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.\n\t\t\t2. MSO tags for Desktop Windows Outlook enforce a 600px width.\n\t\t-->\n\t\t<div style=\"max-width: 600px; margin: auto;\" class=\"email-container\">\n\t\t\t<!--[if mso]>\n\t\t\t<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"600\" align=\"center\">\n\t\t\t<tr>\n\t\t\t<td>\n\t\t\t<![endif]-->\n\n      <!-- Clear Spacer : BEGIN -->\n      <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n        <tr>\n          <td aria-hidden=\"true\" height=\"40\" style=\"font-size: 0; line-height: 0;\">\n            &nbsp;\n          </td>\n        </tr>\n      </table>\n      <!-- Clear Spacer : END -->\n\n\t\t\t<!-- Email Body : BEGIN -->\n\t\t\t<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\" width=\"100%\" style=\"max-width: 600px;\">\n\n\t\t\t\t<!-- 1 Column Text + Button : BEGIN -->\n\t\t\t\t<tr>\n\t\t\t\t\t<td bgcolor=\"#ffffff\">\n\t\t\t\t\t\t<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<td style=\"padding: 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;\">\n\t\t\t\t\t\t\t\t\t<h1 style=\"margin: 0 0 10px 0; font-family: sans-serif; font-size: 24px; line-height: 27px; color: #333333; font-weight: normal;\">{{=it.subject}}</h1>\n                  {{=it.html}}\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t<!-- <tr>\n\t\t\t\t\t\t\t\t<td style=\"padding: 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;\">\n\t\t\t\t\t\t\t\t\t<h2 style=\"margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 21px; color: #333333; font-weight: bold;\">Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.</h2>\n\t\t\t\t\t\t\t\t\t<p style=\"margin: 0;\">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.</p>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr> -->\n\t\t\t\t\t\t</table>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t\t<!-- 1 Column Text + Button : END -->\n\n\t\t\t\t<!-- Clear Spacer : BEGIN -->\n\t\t\t\t<tr>\n\t\t\t\t\t<td aria-hidden=\"true\" height=\"40\" style=\"font-size: 0; line-height: 0;\">\n\t\t\t\t\t\t&nbsp;\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t\t<!-- Clear Spacer : END -->\n\n\t\t\t</table>\n\t\t\t<!-- Email Body : END -->\n\n\t\t\t<!-- Email Footer : BEGIN -->\n\t\t\t<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\" width=\"100%\" style=\"max-width: 680px;\">\n\t\t\t\t<tr>\n\t\t\t\t\t<td style=\"padding: 20px 10px;width: 100%;font-size: 12px; font-family: sans-serif; line-height:18px; text-align: center; color: #888888;\" class=\"x-gmail-data-detectors\">\n\t\t\t\t\t\t<webversion style=\"color:#cccccc; text-decoration:underline; font-weight: bold;\"><a href=\"http://www.publishthis.email/{{=it.messageId}}\">View as a Web Page</a></webversion>\n\t\t\t\t\t\t<br>\n\t\t\t\t\t\tPublish This Email Pty Ltd<br>Unit 6, 63 Elizabeth St, Richmond, VIC 3121, Australia\n\t\t\t\t\t\t<br>\n\t\t\t\t\t\t<unsubscribe style=\"color:#888888; text-decoration:underline;\"><a href=\"https://www.publishthis.email/unsubscribe?sid={{=it.subscriber.subscriberId}}\">Unsubscribe</a></unsubscribe>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<!-- Email Footer : END -->\n\n\t\t\t<!--[if mso]>\n\t\t\t</td>\n\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<![endif]-->\n\t\t</div>\n\n    </center>\n</body>\n</html>\n";
 
 exports.tplDelivery = tplDelivery;
 
 /***/ }),
-/* 41 */
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var tplListNewAPI = "<!DOCTYPE html>\n<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">\n<head>\n    <meta charset=\"utf-8\"> <!-- utf-8 works for most cases -->\n    <meta name=\"viewport\" content=\"width=device-width\"> <!-- Forcing initial-scale shouldn't be necessary -->\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <!-- Use the latest (edge) version of IE rendering engine -->\n    <meta name=\"x-apple-disable-message-reformatting\">  <!-- Disable auto-scale in iOS 10 Mail entirely -->\n    <title>Your new list - {{=it.subject}}</title> <!-- The title tag shows in email notifications, like Android 4.4. -->\n\n\t<!-- CSS Reset -->\n    <style>\n\n        /* What it does: Remove spaces around the email design added by some email clients. */\n        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */\n        html,\n        body {\n            margin: 0 auto !important;\n            padding: 0 !important;\n            height: 100% !important;\n            width: 100% !important;\n        }\n\n        /* What it does: Stops email clients resizing small text. */\n        * {\n            -ms-text-size-adjust: 100%;\n            -webkit-text-size-adjust: 100%;\n        }\n\n        /* What it does: Centers email on Android 4.4 */\n        div[style*=\"margin: 16px 0\"] {\n            margin:0 !important;\n        }\n\n        /* What it does: Stops Outlook from adding extra spacing to tables. */\n        table,\n        td {\n            mso-table-lspace: 0pt !important;\n            mso-table-rspace: 0pt !important;\n        }\n\n        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */\n        table {\n            border-spacing: 0 !important;\n            border-collapse: collapse !important;\n            table-layout: fixed !important;\n            margin: 0 auto !important;\n        }\n        table table table {\n            table-layout: auto;\n        }\n\n        /* What it does: Uses a better rendering method when resizing images in IE. */\n        img {\n            -ms-interpolation-mode:bicubic;\n        }\n\n        /* What it does: A work-around for email clients meddling in triggered links. */\n        *[x-apple-data-detectors],\t/* iOS */\n        .x-gmail-data-detectors, \t/* Gmail */\n        .x-gmail-data-detectors *,\n        .aBn {\n            border-bottom: 0 !important;\n            cursor: default !important;\n            color: inherit !important;\n            text-decoration: none !important;\n            font-size: inherit !important;\n            font-family: inherit !important;\n            font-weight: inherit !important;\n            line-height: inherit !important;\n        }\n\n        /* What it does: Prevents Gmail from displaying an download button on large, non-linked images. */\n        .a6S {\n\t        display: none !important;\n\t        opacity: 0.01 !important;\n        }\n        /* If the above doesn't work, add a .g-img class to any image in question. */\n        img.g-img + div {\n\t        display:none !important;\n\t   \t}\n\n        /* What it does: Prevents underlining the button text in Windows 10 */\n        .button-link {\n            text-decoration: none !important;\n        }\n\n        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */\n        /* Create one of these media queries for each additional viewport size you'd like to fix */\n        /* Thanks to Eric Lepetit (@ericlepetitsf) for help troubleshooting */\n        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) { /* iPhone 6 and 6+ */\n            .email-container {\n                min-width: 375px !important;\n            }\n        }\n\n    </style>\n\n    <!-- Progressive Enhancements -->\n    <style>\n\n        /* What it does: Hover styles for buttons */\n        .button-td,\n        .button-a {\n            transition: all 100ms ease-in;\n        }\n        .button-td:hover,\n        .button-a:hover {\n            background: #555555 !important;\n            border-color: #555555 !important;\n        }\n\n        /* Media Queries */\n        @media screen and (max-width: 600px) {\n\n            /* What it does: Adjust typography on small screens to improve readability */\n\t\t\t.email-container p {\n\t\t\t\tfont-size: 17px !important;\n\t\t\t\tline-height: 22px !important;\n\t\t\t}\n\n\t\t}\n\n\t</style>\n\n\t<!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->\n\t<!--[if gte mso 9]>\n\t<xml>\n\t\t<o:OfficeDocumentSettings>\n\t\t\t<o:AllowPNG/>\n\t\t\t<o:PixelsPerInch>96</o:PixelsPerInch>\n\t\t</o:OfficeDocumentSettings>\n\t</xml>\n\t<![endif]-->\n\n</head>\n<body width=\"100%\" bgcolor=\"#f7f7f7\" style=\"margin: 0; mso-line-height-rule: exactly;\">\n\t<center style=\"width: 100%; background: #f7f7f7; text-align: left;\">\n\n\t\t<!-- Visually Hidden Preheader Text : BEGIN -->\n\t\t<div style=\"display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;\">\n\t\t\tYou've just created a new email list using Publishthis.email.\n\t\t</div>\n\t\t<!-- Visually Hidden Preheader Text : END -->\n\n\t\t<!--\n\t\t\tSet the email width. Defined in two places:\n\t\t\t1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.\n\t\t\t2. MSO tags for Desktop Windows Outlook enforce a 600px width.\n\t\t-->\n\t\t<div style=\"max-width: 600px; margin: auto;\" class=\"email-container\">\n\t\t\t<!--[if mso]>\n\t\t\t<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"600\" align=\"center\">\n\t\t\t<tr>\n\t\t\t<td>\n\t\t\t<![endif]-->\n\n      <!-- Clear Spacer : BEGIN -->\n      <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n        <tr>\n          <td aria-hidden=\"true\" height=\"40\" style=\"font-size: 0; line-height: 0;\">\n            &nbsp;\n          </td>\n        </tr>\n      </table>\n      <!-- Clear Spacer : END -->\n\n\t\t\t<!-- Email Body : BEGIN -->\n\t\t\t<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\" width=\"100%\" style=\"max-width: 600px;\">\n\n\t\t\t\t<!-- 1 Column Text + Button : BEGIN -->\n\t\t\t\t<tr>\n\t\t\t\t\t<td bgcolor=\"#ffffff\">\n\t\t\t\t\t\t<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<td style=\"padding: 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;\">\n\t\t\t\t\t\t\t\t\t<h1 style=\"margin: 0 0 10px 0; font-family: sans-serif; font-size: 24px; line-height: 27px; color: #333333; font-weight: normal;\">Your new email list!</h1>\n                  <p>Congratulations on starting your new email list: <strong>{{=it.subject}}</strong></p>\n                  <p>Share this page to start growing your subscribers:</p>\n                  <p><a href=\"https://www.publishthis.email/{{=it.messageId}}\">https://www.publishthis.email/{{=it.messageId}}</a></p>\n                  <h2 style=\"margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 21px; color: #333333; font-weight: bold;\">How to send to your email list</h2>\n                  <p>Simply email <a href=\"mailto:list{{?it.label}}+{{=it.label}}{{?}}@publishthis.email\">list{{?it.label}}+{{=it.label}}{{?}}@publishthis.email</a> and we will automatically send it to your subscribers.</a>\n                  <p>Thanks,</p>\n                  <a href=\"https://www.publishthis.email\"><img src=\"http://i.imgur.com/QoCKNTi.png\" width=\"262px\"/></a>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t<!-- <tr>\n\t\t\t\t\t\t\t\t<td style=\"padding: 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;\">\n\t\t\t\t\t\t\t\t\t<h2 style=\"margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 21px; color: #333333; font-weight: bold;\">Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.</h2>\n\t\t\t\t\t\t\t\t\t<p style=\"margin: 0;\">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.</p>\n\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t</tr> -->\n\t\t\t\t\t\t</table>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t\t<!-- 1 Column Text + Button : END -->\n\n\t\t\t\t<!-- Clear Spacer : BEGIN -->\n\t\t\t\t<tr>\n\t\t\t\t\t<td aria-hidden=\"true\" height=\"40\" style=\"font-size: 0; line-height: 0;\">\n\t\t\t\t\t\t&nbsp;\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t\t<!-- Clear Spacer : END -->\n\n\t\t\t</table>\n\t\t\t<!-- Email Body : END -->\n\n\t\t\t<!-- Email Footer : BEGIN -->\n\t\t\t<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\" width=\"100%\" style=\"max-width: 680px;\">\n\t\t\t\t<tr>\n\t\t\t\t\t<td style=\"padding: 20px 10px;width: 100%;font-size: 12px; font-family: sans-serif; line-height:18px; text-align: center; color: #888888;\" class=\"x-gmail-data-detectors\">\n\t\t\t\t\t\t<!-- <webversion style=\"color:#cccccc; text-decoration:underline; font-weight: bold;\">View as a Web Page</webversion> -->\n\t\t\t\t\t\t<br>\n\t\t\t\t\t\tPublish This Email Pty Ltd<br>Unit 6, 63 Elizabeth St, Richmond, VIC 3121, Australia\n\t\t\t\t\t\t<br>\n\t\t\t\t\t\t<!-- <unsubscribe style=\"color:#888888; text-decoration:underline;\">unsubscribe</unsubscribe> -->\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<!-- Email Footer : END -->\n\n\t\t\t<!--[if mso]>\n\t\t\t</td>\n\t\t\t</tr>\n\t\t\t</table>\n\t\t\t<![endif]-->\n\t\t</div>\n\n    </center>\n</body>\n</html>\n";
+exports.tplListNewAPI = tplListNewAPI;
+
+/***/ }),
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2497,7 +2700,7 @@ var tplListNew = "<!DOCTYPE html>\n<html lang=\"en\" xmlns=\"http://www.w3.org/1
 exports.tplListNew = tplListNew;
 
 /***/ }),
-/* 42 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2510,7 +2713,7 @@ var tplListSendComplete = "<!DOCTYPE html>\n<html lang=\"en\" xmlns=\"http://www
 exports.tplListSendComplete = tplListSendComplete;
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2523,7 +2726,7 @@ var tplListSendNoSubs = "<!DOCTYPE html>\n<html lang=\"en\" xmlns=\"http://www.w
 exports.tplListSendNoSubs = tplListSendNoSubs;
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2536,7 +2739,7 @@ var tplListSubscriberNew = "<!DOCTYPE html>\n<html lang=\"en\" xmlns=\"http://ww
 exports.tplListSubscriberNew = tplListSubscriberNew;
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2549,7 +2752,7 @@ var tplPageReply = "<!DOCTYPE html>\n<html lang=\"en\" xmlns=\"http://www.w3.org
 exports.tplPageReply = tplPageReply;
 
 /***/ }),
-/* 46 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2562,43 +2765,43 @@ var tplSubscribeVerify = "<!DOCTYPE html>\n<html lang=\"en\" xmlns=\"http://www.
 exports.tplSubscribeVerify = tplSubscribeVerify;
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, exports) {
 
 module.exports = require("aws-sdk");
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, exports) {
 
 module.exports = require("cheerio");
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports) {
 
 module.exports = require("cloudflare");
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports) {
 
 module.exports = require("franc-min");
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports) {
 
 module.exports = require("imgur");
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports) {
 
 module.exports = require("mailparser");
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = require("traditional-or-simplified");
