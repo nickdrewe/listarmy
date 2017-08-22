@@ -11,9 +11,9 @@ angular.module('landing', [])
     showInfoBox: false
   }
 
-  setTimeout(function(){
-    focus('name');
-  }, 500);
+  // setTimeout(function(){
+  //   focus('name');
+  // }, 500);
 
 
   $scope.next = function(){
@@ -111,6 +111,7 @@ angular.module('landing', [])
     // step: -1 - Button
     if($scope.state.step == -1){
       $scope.state.step++;
+      focus('name');
     }
   }
 
