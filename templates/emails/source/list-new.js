@@ -180,7 +180,7 @@ var tplListNew = `<!DOCTYPE html>
                   <h2 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 21px; color: #333333; font-weight: bold;">How to send to your email list</h2>
                   <p>Simply email <a href="mailto:list{{?it.label}}+{{=it.label}}{{?}}@listarmy.com">list{{?it.label}}+{{=it.label}}{{?}}@listarmy.com</a> and we will automatically send it to your subscribers.</a>
                   <p>Thanks,</p>
-                  <a href="https://www.listarmy.com"><img src="http://i.imgur.com/QoCKNTi.png" width="262px"/></a>
+                  <a href="https://www.listarmy.com"><img src="http://i.imgur.com/DtE55Y1.png" width="250px"/></a>
 								</td>
 							</tr>
 							<!-- <tr>

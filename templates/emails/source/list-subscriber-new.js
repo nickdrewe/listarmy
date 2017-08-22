@@ -176,7 +176,7 @@ var tplListSubscriberNew = `<!DOCTYPE html>
 									<h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 24px; line-height: 27px; color: #333333; font-weight: normal;">You have a new subscriber!</h1>
                   <p>{{=it.subscriber.subscriberEmail}} just subscribed to your list <strong>{{=it.title}}</strong>.</p>
                   <p>Thanks,</p>
-                  <a href="https://www.listarmy.com"><img src="http://i.imgur.com/QoCKNTi.png" width="262px"/></a>
+                  <a href="https://www.listarmy.com"><img src="http://i.imgur.com/DtE55Y1.png" width="250px"/></a>
 								</td>
 							</tr>
 							<!-- <tr>

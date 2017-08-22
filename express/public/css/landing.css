@@ -181,7 +181,7 @@ a{
 
 /*info box*/
 .create-info{
-  background-color: #22223B;
+  background-color: #2C4251;
   font-size: 14px;
   width: 284px;
   padding: 7px 12px;
@@ -202,7 +202,7 @@ a{
 	position: absolute;
 	pointer-events: none;
 	/*border-color: rgba(39, 42, 56, 0);*/
-	border-bottom-color: #22223B;
+	border-bottom-color: #2C4251;
 	border-width: 15px;
 	margin-left: -15px;
 }
@@ -252,9 +252,16 @@ a{
   border-radius: 10px;
   border-radius: 13px;
   color: #5B86E5;
+  cursor: pointer;
+}
+.pricing-option:hover{
+  color: #2C4251;
 }
 .pricing-option-selected{
   background-color: #2C4251;
+  color: #FFF;
+}
+.pricing-option-selected:hover{
   color: #FFF;
 }
 .pricing-table{
@@ -262,6 +269,14 @@ a{
   border-collapse: collapse;
 }
 .pricing-table td{
+  border: 1px solid #2C4251;
+  padding: 20px;
+  width: 33%;
+  vertical-align: top;
+}
+.pricing-table td.selected{
+  color: #FFF;
+  background-color: #2C4251;
   border: 1px solid #2C4251;
   padding: 20px;
   width: 33%;
@@ -275,7 +290,7 @@ a{
   font-size: 50px;
   font-weight: 600;
 }
-.option-price span{
+.option-price-month{
   font-size: 12px;
   font-weight: 300;
 }
@@ -286,7 +301,7 @@ a{
 .option-li-bold{
   font-weight: 400 !important;
 }
-.pricing-table li span{
+.pricing-table li .email-price{
   font-weight: 300;
   /*font-size: 12px;*/
 

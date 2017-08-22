@@ -88,18 +88,19 @@
   </div>
 </div>
 
-<div class="pricing-panel">
+<div class="pricing-panel" ng-controller="pricingCtrl">
   <div class="pricing">
     <div class="pricing-heading">Damn simple pricing.</div>
     <!-- pricing options -->
     <div class="pricing-options">
       Subscribers
-      <div class="pricing-option pricing-option-selected">500</div>
-      <div class="pricing-option">1,000</div>
-      <div class="pricing-option">2,500</div>
-      <div class="pricing-option">5,000</div>
-      <div class="pricing-option">10,000</div>
-      <div class="pricing-option">More</div>
+      <!-- pricing-option-selected -->
+      <div class="pricing-option" ng-click="setDisplayPrice(0)" ng-class="{ 'pricing-option-selected': priceIndex == 0 }">500</div>
+      <div class="pricing-option" ng-click="setDisplayPrice(1)" ng-class="{ 'pricing-option-selected': priceIndex == 1 }">1,000</div>
+      <div class="pricing-option" ng-click="setDisplayPrice(2)" ng-class="{ 'pricing-option-selected': priceIndex == 2 }">2,500</div>
+      <div class="pricing-option" ng-click="setDisplayPrice(3)" ng-class="{ 'pricing-option-selected': priceIndex == 3 }">5,000</div>
+      <div class="pricing-option" ng-click="setDisplayPrice(4)" ng-class="{ 'pricing-option-selected': priceIndex == 4 }">10,000</div>
+      <!-- <div class="pricing-option">More</div> -->
     </div>
     <!-- pricing table -->
     <table class="pricing-table">
@@ -108,30 +109,30 @@
           <!-- Tier 1 -->
           <td>
             <div class="option-heading">Free</div>
-            <div class="option-price">$0<span> / month</span></div>
+            <div class="option-price">$0<span class="option-price-month"> / month</span></div>
             <ul>
               <li class="option-li-bold">0 - 250 subscribers</li>
               <li class="option-li-bold">1,000 emails</li>
             </ul>
           </td>
           <!-- Tier 2 -->
-          <td>
-            <div class="option-heading">Starter</div>
-            <div class="option-price">$12<span> / month</span></div>
+          <td ng-class="{'selected': priceIndex < 4}">
+            <div class="option-heading" ng-bind="displayPrice[0].name">Starter</div>
+            <div class="option-price"><span ng-bind="displayPrice[0].price">$12</span><span class="option-price-month"> / month</span></div>
             <ul>
-              <li class="option-li-bold">250 - 500 subscribers</li>
-              <li class="option-li-bold">5,000 emails <span>(0.24c / email)</span></li>
+              <li class="option-li-bold" ng-bind="displayPrice[0].subscribers">250 - 500 subscribers</li>
+              <li class="option-li-bold"><span ng-bind="displayPrice[0].emails">5,000 emails</span> <span class="email-price" ng-bind="displayPrice[0].email_price">(0.24c / email)</span></li>
               <li>Custom email branding</li>
               <li>Email support</li>
             </ul>
           </td>
           <!-- Tier 3 -->
-          <td>
-            <div class="option-heading">Volume</div>
-            <div class="option-price">$20<span> / month</span></div>
+          <td ng-class="{'selected': priceIndex == 4}">
+            <div class="option-heading" ng-bind="displayPrice[1].name">Volume</div>
+            <div class="option-price"><span ng-bind="displayPrice[1].price">$20</span><span class="option-price-month"> / month</span></div>
             <ul>
-              <li class="option-li-bold">500 - 1,000 subscribers</li>
-              <li class="option-li-bold">10,000 emails <span>(0.2c / email)</span></li>
+              <li class="option-li-bold" ng-bind="displayPrice[1].subscribers">500 - 1000 subscribers</li>
+              <li class="option-li-bold"><span ng-bind="displayPrice[1].emails">10,000 emails</span> <span class="email-price" ng-bind="displayPrice[1].email_price">(0.24c / email)</span></li>
               <li>Custom email branding</li>
               <li>Email support</li>
             </ul>

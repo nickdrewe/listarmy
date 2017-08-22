@@ -187,7 +187,7 @@ var tplPageReply = `<!DOCTYPE html>
                   <p>This page is part of your <strong>{{=it.label}}</strong> collection. Any pages you send to <strong>page+{{=it.label}}@listarmy.com</strong> will be added to this collection page: <a href="{{=it.pteDomain}}/c/{{=it.collectionId}}">{{=it.pteDomain}}/c/{{=it.collectionId}}</a></p>
                   {{?}}
                   <p>Thanks,</p>
-                  <a href="https://www.listarmy.com"><img src="http://i.imgur.com/QoCKNTi.png" width="262px"/></a>
+                  <a href="https://www.listarmy.com"><img src="http://i.imgur.com/DtE55Y1.png" width="250px"/></a>
 								</td>
 							</tr>
 							<!-- <tr>

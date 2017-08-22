@@ -121,6 +121,54 @@ angular.module('landing', [])
     $scope.state.showInfoBox = true;
   }
 }])
+.controller('pricingCtrl', ['$scope', function($scope){
+  $scope.pricing = [
+    {
+      name: "Starter",
+      price: "$12",
+      subscribers: "250 - 500 subscribers",
+      emails: "5,000 emails",
+      email_price: "(0.24c / email)"
+    },
+    {
+      name: "Volume",
+      price: "$20",
+      subscribers: "500 - 1,000 subscribers",
+      emails: "10,000 emails",
+      email_price: "(0.20c / email)"
+    },
+    {
+      name: "Volume",
+      price: "$45",
+      subscribers: "1,000 - 2,500 subscribers",
+      emails: "25,000 emails",
+      email_price: "(0.18c / email)"
+    },
+    {
+      name: "Volume",
+      price: "$80",
+      subscribers: "2,500 - 5,000 subscribers",
+      emails: "50,000 emails",
+      email_price: "(0.16c / email)"
+    },
+    {
+      name: "Volume",
+      price: "$140",
+      subscribers: "5,000 - 10,000",
+      emails: "100,000 emails",
+      email_price: "(0.14c / email)"
+    }
+  ];
+  $scope.displayPrice = $scope.pricing;
+  $scope.priceIndex = 0;
+
+  $scope.setDisplayPrice = function(i){
+    $scope.priceIndex = i;
+    if(i == 4){ i-- };
+    $scope.displayPrice = $scope.pricing.slice(i, i + 2);
+  }
+
+}])
 .service('API', function($http, $q){
 
   this.create = function(params){

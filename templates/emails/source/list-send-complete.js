@@ -176,7 +176,7 @@ var tplListSendComplete = `<!DOCTYPE html>
 									<h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 24px; line-height: 27px; color: #333333; font-weight: normal;">Send successful!</h1>
                   <p>Your post <a href="https://www.listarmy.com/{{=it.messageId}}">{{=it.subject}}</a> was delivered to <strong>{{=it.subscribers.length}}</strong> subscribers.</p>
                   <p>Thanks,</p>
-                  <a href="https://www.listarmy.com"><img src="http://i.imgur.com/QoCKNTi.png" width="262px"/></a>
+                  <a href="https://www.listarmy.com"><img src="http://i.imgur.com/DtE55Y1.png" width="250px"/></a>
 								</td>
 							</tr>
 							<!-- <tr>
