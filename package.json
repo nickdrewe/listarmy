@@ -13,6 +13,7 @@
     "deploy:production": "npm run build:serverless && npm run final:deploy:production",
     "final:deploy:production": "cd serverless && sls deploy --stage production",
     "logs": "cd serverless && sls logs --stage dev -f receive --startTime 2h",
+    "logs:create": "cd serverless && sls logs --stage dev -f list-create --startTime 2h",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -1,5 +1,5 @@
 angular.module('landing', [])
-.controller('formCtrl', ['$scope', '$sce', 'API', 'validate', 'focus', function($scope, $sce, API, validate, focus){
+.controller('formCtrl', ['$scope', '$sce', '$location','$anchorScroll', 'API', 'validate', 'focus', function($scope, $sce, $location, $anchorScroll, API, validate, focus){
   $scope.state = {
     step: -1,
     loading: false,
@@ -10,11 +10,6 @@ angular.module('landing', [])
     infoBoxText: null,
     showInfoBox: false
   }
-
-  // setTimeout(function(){
-  //   focus('name');
-  // }, 500);
-
 
   $scope.next = function(){
     $scope.showInfoBox = false; // hide infoBox
@@ -40,7 +35,11 @@ angular.module('landing', [])
           if(response.data.success){
             // proceed to step 3
             $scope.state.step = 3;
-            console.log(response.data)
+            $location.hash('confirm');
+            $anchorScroll();
+
+            $scope.state.list = response.data;
+            console.log(response);
           }else if(!response.data.success && response.data.duplicate_label){
             //duplicate label
             $scope.infoBox('You have already used the label <strong>' + $scope.state.listLabel + '</strong> for another list. Enter another label for this list!');
@@ -78,6 +77,11 @@ angular.module('landing', [])
           if(response.data.success){
             // list created successfully - proceed to step 3
             $scope.state.step = 3;
+            $location.hash('confirm');
+            $anchorScroll();
+
+            $scope.state.list = response.data;
+            console.log(response);
           }else if(!response.data.success && response.data.label_required){
             // label required - proceed to step 2
             $scope.state.step = 2;

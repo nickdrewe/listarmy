@@ -78,14 +78,56 @@
       </div>
     </div>
   </div>
-  <!-- confirm -->
+  <!-- slider panel -->
+  <div class="slider-panel">
+    <div class="slider-inner">
+      <!-- card 1 -->
+      <div class="slider-card">
+        <div class="slider-cell slider-1-3">
+          <div class="slider-img-circle">
+            <img class="slider-img" src="./img/clipboard.svg" />
+          </div>
+        </div>
+        <div class="slider-cell slider-2-3 slider-text-right">
+          <div class="slider-heading">Start your email list in seconds, for free.</div>
+          <div class="slider-subheading">Give your list a name, tell us your email address and you're ready to start collecting subscribers! </div>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div class="slider-card">
+        <div class="slider-cell slider-2-3 slider-text-left">
+          <div class="slider-heading">Sending is damn simple.</div>
+          <div class="slider-subheading">Write emails to your subscribers using your regular email client and email them to <strong>list@listarmy.com</strong>, we'll handle the rest for you.</div>
+        </div>
+        <div class="slider-cell slider-1-3">
+          <div class="slider-img-circle">
+            <img class="slider-img" src="./img/010-signature.svg" />
+          </div>
+        </div>
+      </div>
+      <!-- card 3 -->
+      <div class="slider-card">
+        <div class="slider-cell slider-1-3">
+          <div class="slider-img-circle">
+            <img class="slider-img" src="./img/coding.svg" />
+          </div>
+        </div>
+        <div class="slider-cell slider-2-3 slider-text-right">
+          <div class="slider-heading">Awesome looking emails with no code.</div>
+          <div class="slider-subheading">Use your email editor to add formatting, images and links to your emails. We'll do all the work and make sure your emails looks great when it's delivered to your subscribers.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- confirm panel -->
   <div class="confirm-panel">
     <div class="confirm" ng-show="state.step == 3">
-      <div class="confirm-heading">Done.</div>
+      <div id="confirm" class="confirm-heading">Done.</div>
       <div class="confirm-subheading">Your email list is ready to start collecting subscribers! Here's what to do next.</div>
       <ol>
-        <li>Share your <a href="#">subscription page</a> to start collecting subscribers.</li>
-        <li>Start emailing your subscribers. Email <a href="mailto:list@listarmy.com">list@listarmy.com</a>, we'll handle the rest.</li>
+        <li>Share your <a href="http://www.listarmy.com/{{state.list.messageId}}">subscription page</a> to start collecting subscribers.</li>
+        <li ng-if="state.list.label">Start emailing your subscribers. Email <a href="mailto:list+{{state.list.label}}@listarmy.com">list+{{state.list.label}}@listarmy.com</a>, we'll handle the rest.</li>
+        <li ng-if="!state.list.label">Start emailing your subscribers. Email <a href="mailto:list@listarmy.com">list@listarmy.com</a>, we'll handle the rest.</li>
       </ol>
     </div>
   </div>
