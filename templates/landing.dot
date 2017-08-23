@@ -2,7 +2,7 @@
 <html>
 <head>
 
-  <title>Listarmy.com</title>
+  <title>Listarmy.com - Damn simple email lists</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="stylesheet" type="text/css" href="/css/landing.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -20,7 +20,10 @@
 </head>
 <body ng-app="landing" ng-controller="formCtrl">
   <div class="hero-panel">
-    <div class="hero-center" >
+    <div class="hero-center">
+      <div class="hero-logo">
+        list<span class="logo-army">army</span>.com
+      </div>
       <img class="hero-img" src="./img/marketing.svg" />
       <div class="hero-heading">
         Damn simple email lists.
@@ -140,8 +143,19 @@
         </tr>
       </tbody>
     </table>
-
   </div>
+</div>
+
+<div class="cta-panel">
+  <div class="cta-inner">
+    <div class="cta-heading">Start building your email audience.</div>
+    <div class="create-start-button" ng-click="next()">Create your list in seconds</div>
+  </div>
+</div>
+
+<div class="footer">
+  <a class="footer-item" href="mailto:hello@listarmy.com">Contact</a>
+  <a class="footer-item" href="#">Privacy</a>
 </div>
 
 [[= partial('/partials/analytics.dot') ]]

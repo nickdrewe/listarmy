@@ -21,40 +21,27 @@ a{
 /*sides*/
 .hero-center{
   /*height: 100vh;*/
-  width: 700px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 100px;
-  padding-bottom: 150px;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 .left-side{
   left: 0;
   padding: 100px;
   box-sizing: border-box;
 }
-/*.right-side{
-  right: 0;
-  background-color: rgba(0,0,0,0.5);
-  padding: 100px;
-  box-sizing: border-box;
-}*/
 
-/*logo float*/
-.logo-float{
-  position: absolute;
-  right: 50px;
-  bottom: 50px;
+/*logo*/
+.hero-logo{
   font-size: 40px;
   color: #FFF;
-}
-.logo-list{
   font-weight: 400;
+  margin-bottom: 50px;
 }
 .logo-army{
   font-weight: 600;
-}
-.logo-com{
-  font-weight: 400;
 }
 
 /*hero*/
@@ -209,7 +196,7 @@ a{
 
 /*confirm panel*/
 .confirm-panel{
-  background-color: #22223B;
+  background-color: #2C4251;
 }
 .confirm{
   padding-top: 100px;
@@ -219,7 +206,7 @@ a{
   margin-right: auto;
   font-size: 24px;
   font-weight: 300;
-  width: 700px;
+  max-width: 700px;
 }
 
 /*pricing panel*/
@@ -232,7 +219,7 @@ a{
   margin-left: auto;
   margin-right: auto;
   color: #2C4251;
-  width: 900px;
+  max-width: 900px;
 }
 .pricing-heading{
   font-size: 40px;
@@ -277,10 +264,6 @@ a{
 .pricing-table td.selected{
   color: #FFF;
   background-color: #2C4251;
-  border: 1px solid #2C4251;
-  padding: 20px;
-  width: 33%;
-  vertical-align: top;
 }
 .option-heading{
   font-size: 25px;
@@ -303,6 +286,87 @@ a{
 }
 .pricing-table li .email-price{
   font-weight: 300;
-  /*font-size: 12px;*/
+}
 
+/*CTA panel*/
+.cta-panel{
+  background: linear-gradient(150deg, #2C4251 0%,#5B86E5 100%);
+  padding: 50px 0;
+}
+.cta-inner{
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.cta-heading{
+  color: #FFF;
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/*footer*/
+.footer{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+  color: #2C4251;
+  max-width: 900px;
+  padding: 20px 0;
+}
+.footer-item{
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+@media (max-width: 700px) {
+  .hero-center{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+  }
+  .pricing-table td {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  .create-loader-container {
+    margin-right: 10px;
+  }
+  .create-info {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .confirm {
+    padding: 40px 20px;
+    font-size: 20px;
+  }
+  .confirm-heading {
+    font-size: 40px;
+  }
+  .pricing {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .pricing-option {
+    margin: 0px 2px;
+    padding: 2px 10px;
+  }
+}
+@media (max-width: 360px) {
+  .hero-heading{
+    font-size: 40px;
+  }
+  .hero-subheading{
+    font-size: 20px;
+  }
+  create-start-button {
+    font-size: 18px;
+  }
+  .create input {
+    width: 200px;
+  }
 }
