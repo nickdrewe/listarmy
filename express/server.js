@@ -321,5 +321,5 @@ app.get('/c/:collectionSlug', (req, res) => {
 })
 
 app.listen(config.PORT, function () {
-  console.log(`Publish this email express app listening on port ${config.PORT}!`)
+  console.log(`Listarmy.com express app listening on port ${config.PORT}!`)
 })

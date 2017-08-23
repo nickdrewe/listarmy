@@ -35,9 +35,9 @@ const sendListWelcomeAPI = mailObj => {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@' + config.DOMAIN + '>',
+    Source: '"Listarmy.com" <noreply@' + config.DOMAIN + '>',
     ReplyToAddresses: [
-      '"Publish This Email" <hello@' + config.DOMAIN + '>'
+      '"Listarmy.com" <hello@' + config.DOMAIN + '>'
     ],
     ReturnPath: 'return@' + config.DOMAIN
   }
@@ -76,9 +76,9 @@ const sendNewListReply = mailObj => {
           }
         }
       },
-      Source: '"Publish This Email" <noreply@' + config.DOMAIN + '>',
+      Source: '"Listarmy.com" <noreply@' + config.DOMAIN + '>',
       ReplyToAddresses: [
-        '"Publish This Email" <hello@' + config.DOMAIN + '>'
+        '"Listarmy.com" <hello@' + config.DOMAIN + '>'
       ],
       ReturnPath: 'return@' + config.DOMAIN
     }
@@ -113,9 +113,9 @@ const sendListReply = mailObj => {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@' + config.DOMAIN + '>',
+    Source: '"Listarmy.com" <noreply@' + config.DOMAIN + '>',
     ReplyToAddresses: [
-      '"Publish This Email" <hello@' + config.DOMAIN + '>'
+      '"Listarmy.com" <hello@' + config.DOMAIN + '>'
     ],
     ReturnPath: 'return@' + config.DOMAIN
   }
@@ -148,9 +148,9 @@ const sendListReplyNoSubs = mailObj => {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@' + config.DOMAIN + '>',
+    Source: '"Listarmy.com" <noreply@' + config.DOMAIN + '>',
     ReplyToAddresses: [
-      '"Publish This Email" <hello@' + config.DOMAIN + '>'
+      '"Listarmy.com" <hello@' + config.DOMAIN + '>'
     ],
     ReturnPath: 'return@' + config.DOMAIN
   }

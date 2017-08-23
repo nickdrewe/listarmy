@@ -1265,8 +1265,8 @@ var sendListPreview = function sendListPreview(mailObj) {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
-    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    Source: '"Listarmy.com" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Listarmy.com" <hello@' + _environment.config.DOMAIN + '>'],
     ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
@@ -1335,8 +1335,8 @@ var sendListWelcomeAPI = function sendListWelcomeAPI(mailObj) {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
-    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    Source: '"Listarmy.com" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Listarmy.com" <hello@' + _environment.config.DOMAIN + '>'],
     ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
@@ -1372,8 +1372,8 @@ var sendNewListReply = function sendNewListReply(mailObj) {
           }
         }
       },
-      Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
-      ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+      Source: '"Listarmy.com" <noreply@' + _environment.config.DOMAIN + '>',
+      ReplyToAddresses: ['"Listarmy.com" <hello@' + _environment.config.DOMAIN + '>'],
       ReturnPath: 'return@' + _environment.config.DOMAIN
     };
 
@@ -1405,8 +1405,8 @@ var sendListReply = function sendListReply(mailObj) {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
-    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    Source: '"Listarmy.com" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Listarmy.com" <hello@' + _environment.config.DOMAIN + '>'],
     ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
@@ -1436,8 +1436,8 @@ var sendListReplyNoSubs = function sendListReplyNoSubs(mailObj) {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
-    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    Source: '"Listarmy.com" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Listarmy.com" <hello@' + _environment.config.DOMAIN + '>'],
     ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
@@ -1599,8 +1599,8 @@ var sendSubscriberVerification = function sendSubscriberVerification(subscriber)
         }
       }
     },
-    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
-    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    Source: '"Listarmy.com" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Listarmy.com" <hello@' + _environment.config.DOMAIN + '>'],
     ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
@@ -1760,8 +1760,8 @@ var sendNewSubscriberNotification = function sendNewSubscriberNotification(list)
         }
       }
     },
-    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
-    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    Source: '"Listarmy.com" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Listarmy.com" <hello@' + _environment.config.DOMAIN + '>'],
     ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
@@ -2227,8 +2227,8 @@ var sendReply = function sendReply(mailObj) {
         }
       }
     },
-    Source: '"Publish This Email" <noreply@' + _environment.config.DOMAIN + '>',
-    ReplyToAddresses: ['"Publish This Email" <hello@' + _environment.config.DOMAIN + '>'],
+    Source: '"Listarmy.com" <noreply@' + _environment.config.DOMAIN + '>',
+    ReplyToAddresses: ['"Listarmy.com" <hello@' + _environment.config.DOMAIN + '>'],
     ReturnPath: 'return@' + _environment.config.DOMAIN
   };
 
@@ -2611,7 +2611,7 @@ app.get('/c/:collectionSlug', function (req, res) {
 });
 
 app.listen(_environment.config.PORT, function () {
-  console.log('Publish this email express app listening on port ' + _environment.config.PORT + '!');
+  console.log('Listarmy.com express app listening on port ' + _environment.config.PORT + '!');
 });
 
 /***/ }),
