@@ -13,7 +13,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="listarmy.com" />
   <meta property="og:description" content="" />
-  <meta property="og:image" content="https://www.listarmy.com/fb-og.png" />
+  <meta property="og:image" content="" />
+
+  <meta name="google-site-verification" content="GDsaXFAOnbkhJfKsv9R1evoeyJ9Kr-Bvmrd5e8vBWAU" />
 
   <link rel="canonical" href="https://www.listarmy.com/" />
 
@@ -114,7 +116,7 @@
         </div>
         <div class="slider-cell slider-2-3 slider-text-right">
           <div class="slider-heading">Awesome looking emails with no code.</div>
-          <div class="slider-subheading">Use your email editor to add formatting, images and links to your emails. We'll do all the work and make sure your emails looks great when it's delivered to your subscribers.</div>
+          <div class="slider-subheading">Use your email editor to add formatting, images and links to your emails. We'll do all the work and make sure your email looks great when it's delivered to your subscribers.</div>
         </div>
       </div>
     </div>
